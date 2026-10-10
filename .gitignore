@@ -1,0 +1,46 @@
+# Private call data and local research runs
+data/
+datasets/
+private/
+local_bundles/
+runs/
+outputs/
+**/checkpoints/
+**/native/
+**/human_gold/
+**/raw_hypotheses/
+**/streaming_events/
+**/records/
+**/evaluation/
+**/transcripts/
+*.jsonl
+!benchmark/mock119_30/manifest.jsonl
+*.log
+
+# Large model and runtime binaries
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.onnx
+*.jit
+*.bin
+*.tar
+*.tar.gz
+*.zip
+
+# Only the explicitly synthetic benchmark audio is eligible for Git
+*.wav
+!benchmark/mock119_30/audio/gemini_clean/*.wav
+!benchmark/mock119_30/audio/telephone/*.wav
+*.m4a
+*.mp3
+*.flac
+
+# Generated local files
+.venv/
+__pycache__/
+*.pyc
+*.nbi
+*.nbc
+.DS_Store
