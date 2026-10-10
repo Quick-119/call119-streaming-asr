@@ -1,7 +1,7 @@
-# Public release boundary
+# 公開する情報の範囲
 
-The real 119-call recordings, call-level reference transcripts, IDs, manifests, model outputs, and training windows stay outside this repository. The real-call study here contains aggregate CER and sample counts only. The WAV files under `benchmark/mock119_30/audio/` are **newly generated synthetic conversations** from the published fictional scripts; no real-call audio was mixed into them.
+実際の119番通報音声、通話ごとの正解文字起こし、通話ID、マニフェスト、モデルの推論文字列、学習データの区間情報は、このリポジトリに含めません。実通報を用いた比較で公開するのは、通話数とCERの集計値のみです。`benchmark/mock119_30/audio/`内のWAVは公開した創作台本から**新たに生成した模擬通報音声**で、実通報音声を混合していません。
 
-The model checkpoint, adapters, VAD weight file, and complete frozen runtime bundles are also excluded. Users receive them separately through an access-controlled channel if authorized. This avoids putting multi-gigabyte checkpoints or data-bearing research directories into Git history.
+モデルのチェックポイント、アダプター、VADの重み、完全なfrozen bundleも含めません。利用を認められた人には、アクセス管理された別経路で提供します。これらや機密データを含む研究用ディレクトリをGitの履歴へ入れないためです。
 
-For future updates, copy only reviewed files into this repository. `.gitignore` blocks common dataset, transcript, output, and checkpoint paths. `scripts/audit_public_tree.py` checks every tracked path against a narrow allowlist, rejects credentials and workspace paths in text files, limits file sizes, and verifies the synthetic WAV hashes against the benchmark manifest. Run it before every push. The audit is a release gate; it does not authorize adding source data.
+今後の更新では、内容を確認したファイルだけをこのリポジトリに追加してください。`.gitignore`は一般的なデータセット、文字起こし、出力、チェックポイントのパスを除外します。`scripts/audit_public_tree.py`は追跡中の全ファイルのパスを限定した許可リストと照合し、テキスト内の認証情報らしい文字列やローカル作業領域のパス、ファイルサイズ、模擬音声のSHA-256を検査します。push前に毎回実行してください。監査を通過したことは、元データの追加を許可するものではありません。
