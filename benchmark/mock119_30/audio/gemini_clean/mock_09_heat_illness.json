@@ -1,0 +1,10 @@
+{
+  "id": "mock_09_heat_illness",
+  "model": "gemini-3.8-flash-tts",
+  "request_sha256": "feb6622b4fc8a7e679ee842592f266ea4b33f4f6ef7b9d4f1acf443c2abdf42b",
+  "audio_sha256": "ffdb80c67085c3e059ef90b2f9df8532aa08d3c07a9bea8284f680770ded4697",
+  "sample_rate": 24000,
+  "channels": 1,
+  "duration_sec": 20.8,
+  "created_unix": 1791591750.8048217
+}

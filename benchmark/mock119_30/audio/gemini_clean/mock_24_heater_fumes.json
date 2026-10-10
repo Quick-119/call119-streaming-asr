@@ -1,0 +1,10 @@
+{
+  "id": "mock_24_heater_fumes",
+  "model": "gemini-3.8-flash-tts",
+  "request_sha256": "9b4eef6ca4a12906d72c29f78a19a067702ea276d129c92576761dcad1412575",
+  "audio_sha256": "6ae9c9dfdd806e20099741b67e55cda3514f475a012244cb4374f51f07d43b88",
+  "sample_rate": 24000,
+  "channels": 1,
+  "duration_sec": 19.96,
+  "created_unix": 1791592762.1884449
+}

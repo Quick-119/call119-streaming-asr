@@ -1,0 +1,10 @@
+{
+  "id": "mock_19_school_smoke",
+  "model": "gemini-3.8-flash-tts",
+  "request_sha256": "285a3ac8d97769354023b05741e9d0cd9c7f01349343b5e465722c1886fc48eb",
+  "audio_sha256": "a495cfcb4ef6bc86748572221d78da5465b1342694aa07386c1cdd5a4109ccb2",
+  "sample_rate": 24000,
+  "channels": 1,
+  "duration_sec": 20.08,
+  "created_unix": 1791592699.263047
+}

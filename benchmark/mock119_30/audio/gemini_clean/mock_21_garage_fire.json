@@ -1,0 +1,10 @@
+{
+  "id": "mock_21_garage_fire",
+  "model": "gemini-3.8-flash-tts",
+  "request_sha256": "ca1a986a6daf095acb4fab7ac5d930e634513078ac977ded5b1038be9df60a86",
+  "audio_sha256": "f1968443cc970449dfe53ae72a83f222b6e72ce2131acf01c7b9c441cf139cd3",
+  "sample_rate": 24000,
+  "channels": 1,
+  "duration_sec": 17.2,
+  "created_unix": 1791592725.1274297
+}

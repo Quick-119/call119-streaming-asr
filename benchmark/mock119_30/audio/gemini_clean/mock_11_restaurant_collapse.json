@@ -1,0 +1,10 @@
+{
+  "id": "mock_11_restaurant_collapse",
+  "model": "gemini-3.8-flash-tts",
+  "request_sha256": "80db097303825da4214dd7381a02ca7790fc875130d86aeab0aa4c454c946fab",
+  "audio_sha256": "faacc8cf0e20e5c5ee4ecb3fb16380d383846d9a4c1a593a77642e50182b1bef",
+  "sample_rate": 24000,
+  "channels": 1,
+  "duration_sec": 19.2,
+  "created_unix": 1791592597.9480438
+}

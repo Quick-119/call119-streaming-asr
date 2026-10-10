@@ -1,0 +1,10 @@
+{
+  "id": "mock_16_grass_fire",
+  "model": "gemini-3.8-flash-tts",
+  "request_sha256": "1aac1d9b17d55e29994928b2d10ca026f91ab702b3626ab88fe07ba0047e8d81",
+  "audio_sha256": "f02adaed8a9065719b4007db5ffffd07403b79f6938fdc89861629d3677e1152",
+  "sample_rate": 24000,
+  "channels": 1,
+  "duration_sec": 20.6,
+  "created_unix": 1791592661.227339
+}

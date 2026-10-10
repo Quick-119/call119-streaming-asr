@@ -1,0 +1,10 @@
+{
+  "id": "mock_26_slope_collapse",
+  "model": "gemini-3.8-flash-tts",
+  "request_sha256": "e1954712b521278f0ef0312b41b1cb4290e180b8d63a9ad42f5285317a61a404",
+  "audio_sha256": "c4153cbc99de92c22f105e38a5e2a6424d37e71f6a3d706b5e6e4979b2bf7370",
+  "sample_rate": 24000,
+  "channels": 1,
+  "duration_sec": 21.6,
+  "created_unix": 1791592788.046171
+}

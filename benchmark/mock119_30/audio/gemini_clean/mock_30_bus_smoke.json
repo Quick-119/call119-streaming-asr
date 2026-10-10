@@ -1,0 +1,10 @@
+{
+  "id": "mock_30_bus_smoke",
+  "model": "gemini-3.8-flash-tts",
+  "request_sha256": "d0d32af7c2c532aaf7bdaad9d42d93f0b9fe6d9bf3937b729bf3145941c2cc69",
+  "audio_sha256": "c4d8f7cb8caef97cd62794e8eb33fd51841a19fe72e3455906b9f986471aae44",
+  "sample_rate": 24000,
+  "channels": 1,
+  "duration_sec": 19.48,
+  "created_unix": 1791592837.3090756
+}

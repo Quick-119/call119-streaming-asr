@@ -1,0 +1,10 @@
+{
+  "id": "mock_14_motorcycle_crash",
+  "model": "gemini-3.8-flash-tts",
+  "request_sha256": "2386a7dfc6c5e04440e6f16bcb16678ab01241d6e2acb526600feb14ef30f146",
+  "audio_sha256": "b85926dbcecb51d4cd5dbfc308d808561ee21aa585c04cbbfd4019bdfc1debb6",
+  "sample_rate": 24000,
+  "channels": 1,
+  "duration_sec": 19.28,
+  "created_unix": 1791592635.836231
+}

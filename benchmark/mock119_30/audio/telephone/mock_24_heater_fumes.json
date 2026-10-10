@@ -1,0 +1,24 @@
+{
+  "source_sha256": "6ae9c9dfdd806e20099741b67e55cda3514f475a012244cb4374f51f07d43b88",
+  "parameters": {
+    "profile": "light",
+    "highpass_hz": 180,
+    "lowpass_hz": 3700,
+    "noise": "pink",
+    "snr_db": 25,
+    "compress_ratio": 1.5,
+    "codec_roundtrip": false,
+    "hum_dbfs": null,
+    "seed": 119023
+  },
+  "audio_sha256": "bccd40fbb4b67b64e3f59a400b4a6c059830af8ab42784043a1c0d9e2e2727e5",
+  "duration_sec": 19.96,
+  "sample_rate": 8000,
+  "channels": 2,
+  "codec": "G.711 mu-law",
+  "rms_dbfs": -13.224222659593243,
+  "peak_dbfs": -0.7445971965789795,
+  "seed": 119023,
+  "speech_rms_before_mix": 0.07992194508808033,
+  "noise_rms_before_mix": 0.00449434125126214
+}

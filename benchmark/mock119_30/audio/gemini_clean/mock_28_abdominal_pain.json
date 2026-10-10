@@ -1,0 +1,10 @@
+{
+  "id": "mock_28_abdominal_pain",
+  "model": "gemini-3.8-flash-tts",
+  "request_sha256": "0f25ebf2b54b86a334f702c893b5723efdb9bebfa6e050af6d0e272aeb88fa4a",
+  "audio_sha256": "44141159e79313e428b42706cbca11c36945722c3d4fa092be5f6d516097ff20",
+  "sample_rate": 24000,
+  "channels": 1,
+  "duration_sec": 19.64,
+  "created_unix": 1791592813.3232427
+}

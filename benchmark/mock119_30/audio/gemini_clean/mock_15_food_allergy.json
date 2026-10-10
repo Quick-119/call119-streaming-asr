@@ -1,0 +1,10 @@
+{
+  "id": "mock_15_food_allergy",
+  "model": "gemini-3.8-flash-tts",
+  "request_sha256": "69a123bdee0882e287ec1455bbc5b2b83fa4b774aadee5bb2e6ceef102be92ff",
+  "audio_sha256": "e9e38e720fd344458c2fd7addaa2fe845b3483b9929daceb481d6cc57c3b0c29",
+  "sample_rate": 24000,
+  "channels": 1,
+  "duration_sec": 20.16,
+  "created_unix": 1791592648.271322
+}

@@ -1,0 +1,10 @@
+{
+  "id": "mock_07_river_fall",
+  "model": "gemini-3.8-flash-tts",
+  "request_sha256": "05fbbebc581a82fa5a8e8b67f65f9a19e0b80f127ee10d632acbf3156ea047d1",
+  "audio_sha256": "9a8aeb91dbc006e1555d06ed61bcc62962df7be362d4d773e2499e578d5f6425",
+  "sample_rate": 24000,
+  "channels": 1,
+  "duration_sec": 17.24,
+  "created_unix": 1791591724.016708
+}

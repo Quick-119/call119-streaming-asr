@@ -1,0 +1,10 @@
+{
+  "id": "mock_25_playground_fall",
+  "model": "gemini-3.8-flash-tts",
+  "request_sha256": "aa6b586602e7c286b3293d679494316f2fa280c89b3faf263ba5b9b08a0236c7",
+  "audio_sha256": "6cc184f6458dccdd3fd9ed433f4d50cf69703aa37c822cd533b5de51d35ae57e",
+  "sample_rate": 24000,
+  "channels": 1,
+  "duration_sec": 17.76,
+  "created_unix": 1791592774.2073295
+}
