@@ -1,0 +1,289 @@
+{
+  "baseline": "whisper_large_v3_zero_shot",
+  "candidate": "pseudo_quality_full",
+  "manifest_sha256": "a99ddf884789616fc856b346eecd88de32e4a93c80d745d5fb1b869c857d69e4",
+  "calls": 30,
+  "baseline_micro_cer": 0.04682926829268293,
+  "candidate_micro_cer": 0.06016260162601626,
+  "candidate_minus_baseline_pp": 1.3333333333333335,
+  "relative_error_reduction": -0.28472222222222227,
+  "paired_bootstrap_95pp": [
+    0.5899705014749262,
+    2.0981278244028405
+  ],
+  "improved_calls": 5,
+  "tied_calls": 9,
+  "worse_calls": 16,
+  "per_call": [
+    {
+      "call_id": "mock_01_chest_pain",
+      "scenario": "胸痛の救急通報",
+      "noise_profile": "median",
+      "baseline_cer": 0.05504587155963303,
+      "candidate_cer": 0.09174311926605505,
+      "cer_change_pp": 3.669724770642202,
+      "reference_chars": 109
+    },
+    {
+      "call_id": "mock_02_kitchen_fire",
+      "scenario": "台所の火災通報",
+      "noise_profile": "light",
+      "baseline_cer": 0.038461538461538464,
+      "candidate_cer": 0.08653846153846154,
+      "cer_change_pp": 4.8076923076923075,
+      "reference_chars": 104
+    },
+    {
+      "call_id": "mock_03_bicycle_crash",
+      "scenario": "交通事故の救急通報",
+      "noise_profile": "busy",
+      "baseline_cer": 0.045871559633027525,
+      "candidate_cer": 0.027522935779816515,
+      "cer_change_pp": -1.834862385321101,
+      "reference_chars": 109
+    },
+    {
+      "call_id": "mock_04_stair_fall",
+      "scenario": "階段での転倒の救急通報",
+      "noise_profile": "median",
+      "baseline_cer": 0.041666666666666664,
+      "candidate_cer": 0.020833333333333332,
+      "cer_change_pp": -2.083333333333333,
+      "reference_chars": 96
+    },
+    {
+      "call_id": "mock_05_building_smoke",
+      "scenario": "建物の煙の火災通報",
+      "noise_profile": "light",
+      "baseline_cer": 0.05555555555555555,
+      "candidate_cer": 0.08333333333333333,
+      "cer_change_pp": 2.7777777777777777,
+      "reference_chars": 108
+    },
+    {
+      "call_id": "mock_06_child_seizure",
+      "scenario": "子どものけいれんの救急通報",
+      "noise_profile": "median",
+      "baseline_cer": 0.15315315315315314,
+      "candidate_cer": 0.15315315315315314,
+      "cer_change_pp": 0.0,
+      "reference_chars": 111
+    },
+    {
+      "call_id": "mock_07_river_fall",
+      "scenario": "川への転落の救助通報",
+      "noise_profile": "busy",
+      "baseline_cer": 0.010101010101010102,
+      "candidate_cer": 0.050505050505050504,
+      "cer_change_pp": 4.04040404040404,
+      "reference_chars": 99
+    },
+    {
+      "call_id": "mock_08_factory_injury",
+      "scenario": "工場での負傷の救急通報",
+      "noise_profile": "busy",
+      "baseline_cer": 0.08571428571428572,
+      "candidate_cer": 0.08571428571428572,
+      "cer_change_pp": 0.0,
+      "reference_chars": 105
+    },
+    {
+      "call_id": "mock_09_heat_illness",
+      "scenario": "公園での熱中症疑いの救急通報",
+      "noise_profile": "light",
+      "baseline_cer": 0.009259259259259259,
+      "candidate_cer": 0.027777777777777776,
+      "cer_change_pp": 1.8518518518518516,
+      "reference_chars": 108
+    },
+    {
+      "call_id": "mock_10_gas_smell",
+      "scenario": "ガス臭の火災予防通報",
+      "noise_profile": "median",
+      "baseline_cer": 0.04807692307692308,
+      "candidate_cer": 0.0673076923076923,
+      "cer_change_pp": 1.9230769230769225,
+      "reference_chars": 104
+    },
+    {
+      "call_id": "mock_11_restaurant_collapse",
+      "scenario": "飲食店での意識消失",
+      "noise_profile": "busy",
+      "baseline_cer": 0.009009009009009009,
+      "candidate_cer": 0.0,
+      "cer_change_pp": -0.9009009009009009,
+      "reference_chars": 111
+    },
+    {
+      "call_id": "mock_12_balcony_fire",
+      "scenario": "ベランダからの出火",
+      "noise_profile": "median",
+      "baseline_cer": 0.06796116504854369,
+      "candidate_cer": 0.11650485436893204,
+      "cer_change_pp": 4.8543689320388355,
+      "reference_chars": 103
+    },
+    {
+      "call_id": "mock_13_pool_rescue",
+      "scenario": "プールでの救急通報",
+      "noise_profile": "light",
+      "baseline_cer": 0.05660377358490566,
+      "candidate_cer": 0.08490566037735849,
+      "cer_change_pp": 2.8301886792452824,
+      "reference_chars": 106
+    },
+    {
+      "call_id": "mock_14_motorcycle_crash",
+      "scenario": "バイク事故",
+      "noise_profile": "busy",
+      "baseline_cer": 0.019230769230769232,
+      "candidate_cer": 0.019230769230769232,
+      "cer_change_pp": 0.0,
+      "reference_chars": 104
+    },
+    {
+      "call_id": "mock_15_food_allergy",
+      "scenario": "食後の呼吸困難",
+      "noise_profile": "median",
+      "baseline_cer": 0.02912621359223301,
+      "candidate_cer": 0.05825242718446602,
+      "cer_change_pp": 2.912621359223301,
+      "reference_chars": 103
+    },
+    {
+      "call_id": "mock_16_grass_fire",
+      "scenario": "河川敷の草火災",
+      "noise_profile": "light",
+      "baseline_cer": 0.07142857142857142,
+      "candidate_cer": 0.07142857142857142,
+      "cer_change_pp": 0.0,
+      "reference_chars": 98
+    },
+    {
+      "call_id": "mock_17_elevator_trapped",
+      "scenario": "エレベーター閉じ込め",
+      "noise_profile": "median",
+      "baseline_cer": 0.039603960396039604,
+      "candidate_cer": 0.06930693069306931,
+      "cer_change_pp": 2.9702970297029707,
+      "reference_chars": 101
+    },
+    {
+      "call_id": "mock_18_labor",
+      "scenario": "出産間近の救急通報",
+      "noise_profile": "light",
+      "baseline_cer": 0.041666666666666664,
+      "candidate_cer": 0.07291666666666667,
+      "cer_change_pp": 3.125000000000001,
+      "reference_chars": 96
+    },
+    {
+      "call_id": "mock_19_school_smoke",
+      "scenario": "学校の校舎から煙",
+      "noise_profile": "busy",
+      "baseline_cer": 0.019230769230769232,
+      "candidate_cer": 0.019230769230769232,
+      "cer_change_pp": 0.0,
+      "reference_chars": 104
+    },
+    {
+      "call_id": "mock_20_station_collapse",
+      "scenario": "駅のホームでの急病",
+      "noise_profile": "busy",
+      "baseline_cer": 0.030612244897959183,
+      "candidate_cer": 0.061224489795918366,
+      "cer_change_pp": 3.061224489795918,
+      "reference_chars": 98
+    },
+    {
+      "call_id": "mock_21_garage_fire",
+      "scenario": "車庫内の火災",
+      "noise_profile": "median",
+      "baseline_cer": 0.10112359550561797,
+      "candidate_cer": 0.06741573033707865,
+      "cer_change_pp": -3.3707865168539324,
+      "reference_chars": 89
+    },
+    {
+      "call_id": "mock_22_hiking_injury",
+      "scenario": "登山道での負傷",
+      "noise_profile": "busy",
+      "baseline_cer": 0.01834862385321101,
+      "candidate_cer": 0.01834862385321101,
+      "cer_change_pp": 0.0,
+      "reference_chars": 109
+    },
+    {
+      "call_id": "mock_23_choking",
+      "scenario": "食べ物を喉に詰まらせた通報",
+      "noise_profile": "median",
+      "baseline_cer": 0.05263157894736842,
+      "candidate_cer": 0.06315789473684211,
+      "cer_change_pp": 1.052631578947369,
+      "reference_chars": 95
+    },
+    {
+      "call_id": "mock_24_heater_fumes",
+      "scenario": "暖房器具使用中の体調不良",
+      "noise_profile": "light",
+      "baseline_cer": 0.039603960396039604,
+      "candidate_cer": 0.0297029702970297,
+      "cer_change_pp": -0.9900990099009903,
+      "reference_chars": 101
+    },
+    {
+      "call_id": "mock_25_playground_fall",
+      "scenario": "遊具からの転落",
+      "noise_profile": "busy",
+      "baseline_cer": 0.03260869565217391,
+      "candidate_cer": 0.03260869565217391,
+      "cer_change_pp": 0.0,
+      "reference_chars": 92
+    },
+    {
+      "call_id": "mock_26_slope_collapse",
+      "scenario": "道路脇の土砂崩れ",
+      "noise_profile": "busy",
+      "baseline_cer": 0.02654867256637168,
+      "candidate_cer": 0.02654867256637168,
+      "cer_change_pp": 0.0,
+      "reference_chars": 113
+    },
+    {
+      "call_id": "mock_27_warehouse_odor",
+      "scenario": "倉庫での刺激臭",
+      "noise_profile": "median",
+      "baseline_cer": 0.11,
+      "candidate_cer": 0.14,
+      "cer_change_pp": 3.0000000000000013,
+      "reference_chars": 100
+    },
+    {
+      "call_id": "mock_28_abdominal_pain",
+      "scenario": "急な腹痛の救急通報",
+      "noise_profile": "light",
+      "baseline_cer": 0.07291666666666667,
+      "candidate_cer": 0.08333333333333333,
+      "cer_change_pp": 1.0416666666666656,
+      "reference_chars": 96
+    },
+    {
+      "call_id": "mock_29_bathroom_collapse",
+      "scenario": "浴室での意識低下",
+      "noise_profile": "median",
+      "baseline_cer": 0.022222222222222223,
+      "candidate_cer": 0.07777777777777778,
+      "cer_change_pp": 5.555555555555555,
+      "reference_chars": 90
+    },
+    {
+      "call_id": "mock_30_bus_smoke",
+      "scenario": "路線バスからの煙",
+      "noise_profile": "busy",
+      "baseline_cer": 0.008849557522123894,
+      "candidate_cer": 0.008849557522123894,
+      "cer_change_pp": 0.0,
+      "reference_chars": 113
+    }
+  ]
+}
