@@ -1,0 +1,54 @@
+{
+  "engine": "SimulStreaming",
+  "vendor": "vendor/SimulStreaming",
+  "vad_model": "vendor/silero_vad.jit",
+  "chunk_sec": 0.5,
+  "beam": 3,
+  "frame_threshold": 75,
+  "audio_max_len": 30.0,
+  "audio_min_len": 0.0,
+  "never_fire": false,
+  "max_context_tokens": 64,
+  "dtype": "autocast_float16",
+  "vac_threshold": 0.5,
+  "vac_silence_ms": 500,
+  "vac_pad_ms": 100,
+  "cpu_threads": 4,
+  "no_repeat_ngram_size": 0,
+  "alignment_heads_override": [
+    [
+      22,
+      4
+    ],
+    [
+      14,
+      6
+    ],
+    [
+      19,
+      11
+    ],
+    [
+      12,
+      16
+    ],
+    [
+      23,
+      3
+    ],
+    [
+      22,
+      13
+    ],
+    [
+      22,
+      18
+    ],
+    [
+      22,
+      3
+    ]
+  ],
+  "run_id": "best_measured_c37_fp16_05_261006",
+  "checkpoint": "model/whisper.pt"
+}
