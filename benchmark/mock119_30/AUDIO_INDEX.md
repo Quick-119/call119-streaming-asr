@@ -2,7 +2,7 @@
 
 雑音付き音声をCER評価に使用した。Gemini元音声と各台本も保存している。
 
-| No. | 内容 | 長さ | 雑音付き | Gemini元音声 | 文字起こし |
+| 番号 | 内容 | 長さ | 雑音付き | Gemini元音声 | 文字起こし |
 |---:|---|---:|---|---|---|
 | 01 | 胸痛の救急通報 | 21.7秒 | [再生](audio/telephone/mock_01_chest_pain.wav) | [再生](audio/gemini_clean/mock_01_chest_pain.wav) | [読む](transcripts/mock_01_chest_pain.txt) |
 | 02 | 台所の火災通報 | 20.3秒 | [再生](audio/telephone/mock_02_kitchen_fire.wav) | [再生](audio/gemini_clean/mock_02_kitchen_fire.wav) | [読む](transcripts/mock_02_kitchen_fire.txt) |

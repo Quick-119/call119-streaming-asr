@@ -1,26 +1,26 @@
-# AI-teacher stage and human-follow-up stage
+# 自動文字起こし教師段階と人手教師追加後の比較
 
-This is the **aggregate-only** release of the comparison between `pseudo_quality_full` and `quality_full_then_human_replay`. No real-call audio, reference text, hypotheses, call identifiers, or call-level scores are included. Machine-readable split totals are in [`summary.json`](summary.json).
+`pseudo_quality_full`と`quality_full_then_human_replay`の比較結果を、**集計値のみ**公開します。実通報音声、正解文字起こし、推論文字列、通話ID、通話ごとのスコアは含めていません。評価データの分割ごとの集計値は[`summary.json`](summary.json)に記録しています。
 
-## Training stages
+## 学習段階
 
-| Stage | Calls | Training windows | Audio hours |
+| 段階 | 通話数 | 学習区間数 | 音声時間 |
 |---|---:|---:|---:|
-| AI teacher, one epoch | 12,232 | 100,801 | 498.23 |
-| Human follow-up, one epoch | 1,186 | 6,258 | 45.92 |
+| 自動文字起こしを教師にした段階（1エポック） | 12,232 | 100,801 | 498.23時間 |
+| 人手文字起こしを教師にした追加段階（1エポック） | 1,186 | 6,258 | 45.92時間 |
 
-The source corpus had 14,514 calls. Quality filtering reduced the AI-teacher stage to 12,232 calls. The follow-up consisted of 797 newly annotated calls and 389 replayed older human-annotated calls. Both stages started from an earlier `c37` adapter with prior human-data exposure. Therefore this comparison estimates the increment from the **final human follow-up stage**. It does not compare a strictly never-human-trained model with a human-trained model, nor isolate the new annotations from the older replayed annotations.
+元の候補コーパスは14,514通話で、品質による選別後に自動文字起こし教師段階で使用したのは12,232通話です。追加段階の1,186通話には、新たに人手で文字起こしした797通話と、以前の人手文字起こしを再投入した389通話が含まれます。両段階の初期値は、過去に人手データを使って学習した`c37`アダプターです。この比較で評価できるのは**最後の人手教師追加段階による増分**であり、人手データを一度も使わないモデルとの比較や、新規797通話だけの効果の分離ではありません。
 
 ## CER
 
-Both frozen FP16 models used the same SimulStreaming configuration: 0.5-second strict input chunks, beam 3, frame threshold 75, AlignAtt and VAC. CER is pooled character errors divided by pooled known reference characters after NFKC, katakana-to-hiragana conversion, and removal of whitespace and punctuation. Numeral or kanji spelling variants remain errors.
+両モデルは同じfrozen FP16のSimulStreaming設定を使用しました。厳密な0.5秒刻みの入力、beam 3、frame threshold 75、AlignAtt、VACです。CERは、NFKC正規化、カタカナからひらがなへの変換、空白・句読点の除去を行った後、文字単位の誤り数の合計を正解文字数の合計で割った値です。数字と漢数字、異なる漢字表記は誤りとして数えます。
 
-| Evaluation group | Calls | AI stage | Human follow-up | Change |
+| 評価群 | 通話数 | 自動文字起こし教師段階 | 人手教師追加後 | 差 |
 |---|---:|---:|---:|---:|
-| Development | 48 | 22.95% | 16.97% | −5.98 points |
-| Held-out evaluation | 126 | 28.87% | 20.27% | **−8.60 points** |
-| All reported calls | 174 | 27.18% | 19.33% | −7.85 points |
+| 開発用評価 | 48 | 22.95% | 16.97% | −5.98ポイント |
+| 学習から除外した評価 | 126 | 28.87% | 20.27% | **−8.60ポイント** |
+| 報告した全評価 | 174 | 27.18% | 19.33% | −7.85ポイント |
 
-The paired-call bootstrap 95% interval for the held-out difference was **−12.09 to −5.82 points** (5,000 resamples). These evaluation calls were excluded from this training, but some held-out sets had been viewed in earlier research; they are not a completely untouched blind test. The 0.5 seconds measures input update cadence, not end-to-end production latency.
+学習から除外した126通話について、通話単位のペア・ブートストラップを5,000回行った差の95%区間は**−12.09～−5.82ポイント**でした。これらの通話は今回の学習には使用していませんが、評価群の一部は以前の研究で参照したことがあります。完全に未参照のブラインドテストではありません。また、0.5秒は音声入力の更新間隔であり、実運用時の認識結果表示までの遅延ではありません。
 
-`summary.json` preserves the six split-level aggregate counts and model SHA-256 fingerprints while omitting all call-level data. The synthetic benchmark in [`benchmark/mock119_30`](../../benchmark/mock119_30/) is a separate evaluation distribution and should not be compared as if it represented real-call CER.
+`summary.json`には分割ごとの6組の集計値とモデルのSHA-256を記録し、通話ごとのデータは省いています。[模擬通報30件のベンチマーク](../../benchmark/mock119_30/)は別の評価分布です。模擬通報のCERを実通報のCERと同一視することはできません。

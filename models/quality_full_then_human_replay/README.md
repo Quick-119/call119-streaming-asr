@@ -1,5 +1,5 @@
 # `quality_full_then_human_replay`
 
-Selected 2026-10-08 model: Whisper large-v3 native FP16 weights, 0.5-second SimulStreaming with AlignAtt and VAC. The AI-teacher stage used 12,232 calls and the follow-up human-teacher stage used 1,186 calls (6,258 windows, 45.92 hours). This checkpoint is the human-follow-up candidate used in the published comparison.
+2026年10月8日時点で選んだモデルです。Whisper large-v3のネイティブFP16重みを、AlignAttとVACを使用する0.5秒刻みのSimulStreamingで推論します。自動文字起こし教師段階では12,232通話を使用し、続く人手教師段階では1,186通話（6,258学習区間、45.92時間）を使用しました。公開した比較の「人手教師追加後」に当たります。
 
-The large `model/whisper.pt` is deliberately absent. Required SHA-256: `8a8a65377c50c339aba765756b174e0069441c0649f6207f100f2f59aec0a466`. Obtain the **complete frozen bundle** separately; see the [model access guide](../../docs/model_access.md). The configuration here is a public copy for inspection, not a runnable bundle by itself.
+容量の大きい`model/whisper.pt`は収録していません。必要なSHA-256は`8a8a65377c50c339aba765756b174e0069441c0649f6207f100f2f59aec0a466`です。[モデル利用ガイド](../../docs/model_access.md)に従い、**完全なfrozen bundle**を別途入手してください。ここにある設定は公開結果を確認するためのコピーで、これだけではモデルを実行できません。

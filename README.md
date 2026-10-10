@@ -1,26 +1,24 @@
-# 119-call streaming ASR
+# 119番通報向けストリーミング音声認識
 
-119番通報向けストリーミング音声認識の研究成果を公開するリポジトリです。学習済みモデルを使うには、管理者から**完全なfrozen bundle**を別途入手する必要があります。ここには設定・推論コード・集計結果と、実通報を一切使わずに作成した模擬通報30件の評価データを収録しています。実際の通報音声、文字起こし、チェックポイントは公開していません。詳しい入手物と手順は[モデル利用ガイド](docs/model_access.md)、追加モデルのCER評価は[模擬通報ベンチマーク](benchmark/mock119_30/README.md)を参照してください。
+Whisper large-v3とSimulStreamingを使った、119番通報向け音声認識の研究成果を公開するリポジトリです。推論時は0.5秒ごとに音声を入力します。モデルの設定・推論コード・比較の集計結果と、**実通報を使わずに作成した模擬通報30件**の評価データを収録しています。実際の119番通報音声やその文字起こし、学習済みチェックポイントは公開していません。
 
-Japanese emergency-call ASR research with a Whisper large-v3 model and 0.5-second SimulStreaming input updates. This repository contains the runtime integration, model configuration, aggregate study results, and a **fully synthetic** 30-call benchmark. It contains no real 119-call recordings or transcripts and no model checkpoints.
+## 収録内容
 
-## What is here
-
-| Directory | Contents |
+| ディレクトリ | 内容 |
 |---|---|
-| [`models/`](models/) | Configuration and exact model SHA-256 for the AI-teacher stage and the human-follow-up stage |
-| [`runtime/`](runtime/) | The shared multi-call inference runner and batching helpers used by the comparisons |
-| [`examples/`](examples/) | Single-file inference example using an externally supplied frozen bundle |
-| [`study/pseudo_vs_human/`](study/pseudo_vs_human/) | Aggregate comparison on real-call evaluation sets; no call-level data |
-| [`benchmark/mock119_30/`](benchmark/mock119_30/) | Gemini TTS scripts, synthetic audio, frozen references, and 30-call CER results |
+| [`models/`](models/) | 自動文字起こし教師段階と人手教師追加後のモデル設定、チェックポイントのSHA-256 |
+| [`runtime/`](runtime/) | 比較実験で使った複数通話のストリーミング推論コードとバッチ処理補助コード |
+| [`examples/`](examples/) | 別途入手した完全なモデル一式を使い、音声ファイル1件を推論する例 |
+| [`study/pseudo_vs_human/`](study/pseudo_vs_human/) | 実通報の評価における集計比較。通話ごとのデータは含まない |
+| [`benchmark/mock119_30/`](benchmark/mock119_30/) | Gemini TTSによる創作台本・模擬音声・正解文・30件のCER評価結果 |
 
-The selected 2026-10-08 model is `quality_full_then_human_replay`: a stage trained on 12,232 AI-transcribed calls followed by 1,186 human-transcribed calls. The AI-stage checkpoint is `pseudo_quality_full`. The source corpus had 14,514 calls; 14,514 is **not** the number used in this AI stage. Both stages started from an earlier `c37` adapter that already had human-data exposure, so this comparison measures the **additional human stage**, not a never-human-trained model.
+2026年10月8日時点で選んだモデルは`quality_full_then_human_replay`です。自動文字起こしした12,232通話で学習した後、人手で文字起こしした1,186通話を使って追加学習しています。比較対象の自動文字起こし教師段階のモデルは`pseudo_quality_full`です。元の候補コーパスは14,514通話ですが、この学習段階で使用したのは品質選別後の12,232通話です。両モデルの出発点である`c37`アダプターには以前の人手データによる学習が含まれるため、この比較が示すのは**最後の人手教師追加段階の効果**です。人手データを一度も使わないモデルとの比較ではありません。
 
-## To use the model
+## モデルを使うために必要なもの
 
-You must obtain the **complete frozen bundle** separately from the project maintainers. Its `model/whisper.pt` is approximately 3.1 GB and is not published here. The bundle also needs `BUNDLE.json`, `vendor/SimulStreaming/`, `vendor/silero_vad.jit`, and its `scripts/` files. The two bundles have different model hashes; see the [model access guide](docs/model_access.md) for the complete list and setup commands. A base Whisper download or LoRA adapter is unnecessary when the complete frozen bundle is available.
+管理者から**完全なfrozen bundle（モデルと実行に必要なファイル一式）**を別途入手してください。約3.1 GBの`model/whisper.pt`はGitHubにありません。`BUNDLE.json`、`vendor/SimulStreaming/`、`vendor/silero_vad.jit`、`scripts/`内の必要なファイルも必要です。モデルごとにチェックポイントのハッシュ値が異なります。入手物の一覧、配置方法、動作環境は[モデル利用ガイド](docs/model_access.md)に記載しています。完全なbundleがあれば、WhisperのベースモデルやLoRAアダプターを別途ダウンロードする必要はありません。
 
-After placing the bundle in the ignored `local_bundles/` directory, run the single-file example on a WAV file:
+bundleをGit管理対象外の`local_bundles/`に配置した後、次の例でWAVファイルを推論できます。
 
 ```bash
 python examples/transcribe_file.py \
@@ -29,17 +27,17 @@ python examples/transcribe_file.py \
   --output runs/example_01
 ```
 
-The input is fed in 8,000-sample chunks at 16 kHz. The **0.5 seconds refers to input update cadence**, not a guarantee of end-to-end display latency. The [benchmark guide](benchmark/mock119_30/README.md) shows how to evaluate another frozen bundle on the same 30 synthetic calls. Running inference or the benchmark does **not** require the real-call dataset.
+16 kHzの音声を8,000サンプルずつ入力します。**0.5秒は音声の入力更新間隔であり、認識結果の表示遅延を保証する値ではありません。** 別のbundleを同じ模擬通報30件で評価する方法は[ベンチマーク利用ガイド](benchmark/mock119_30/README.md)を参照してください。推論と模擬通報の評価に実通報データは不要です。
 
-## Reported CER
+## CERの集計結果
 
-| Evaluation | AI-teacher stage | Human-follow-up stage | Improvement |
+| 評価データ | 自動文字起こし教師段階 | 人手教師追加後 | 改善幅 |
 |---|---:|---:|---:|
-| 126 held-out real calls | 28.87% | 20.27% | 8.60 percentage points |
-| 30 synthetic Gemini TTS calls | 6.02% | 4.88% | 1.14 percentage points |
+| 学習から除外した実通報126件 | 28.87% | 20.27% | 8.60ポイント |
+| Gemini TTSによる模擬通報30件 | 6.02% | 4.88% | 1.14ポイント |
 
-See the [real-call aggregate study](study/pseudo_vs_human/README.md) and [synthetic benchmark report](benchmark/mock119_30/FINAL_REPORT.md) for protocols and limitations. Synthetic performance does not represent real-call performance.
+評価方法と限界は[実通報の集計比較](study/pseudo_vs_human/README.md)と[模擬通報の評価報告](benchmark/mock119_30/FINAL_REPORT.md)に記載しています。模擬通報での性能を実通報での性能と同一視することはできません。
 
-## Privacy and release checks
+## 機密データの扱いと公開前の確認
 
-Only explicitly selected files are included. The [release policy](docs/privacy.md), `.gitignore`, and `scripts/audit_public_tree.py` prevent accidental inclusion of private inputs, transcripts, generated per-call real-call outputs, credentials, and checkpoints. Run `python scripts/audit_public_tree.py` before pushing.
+公開対象として選んだファイルだけを収録しています。[公開方針](docs/privacy.md)を確認してください。`.gitignore`は元データ、実通報の文字起こし、通話ごとの評価出力、チェックポイントなどの混入を防ぐための設定です。`scripts/audit_public_tree.py`は追跡中のファイルを許可リストと照合し、認証情報らしい文字列と模擬音声のハッシュ値も検証します。変更を公開する前に`python scripts/audit_public_tree.py`を実行してください。
