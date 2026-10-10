@@ -8,15 +8,23 @@
 
 - `manifest.jsonl`: 30音声の**相対パス**、SHA-256、台本全文、正規化した正解文。計586.0秒・正解3,075文字。
 - `audio/gemini_clean/`: Gemini生成直後のWAV。
-- `audio/telephone/`: 両モデルのCER評価に使用した雑音付きWAV。
+- `audio/telephone/`: 3モデルのCER評価に使用した雑音付きWAV。
 - `transcripts/`: 各台本の読みやすい表示。すべて`scripts.json`の創作文から生成したもの。
-- `results/`: 2モデルの文字出力・通話別CER・比較JSONとCSV。詳細は [`FINAL_REPORT.md`](FINAL_REPORT.md)。
+- `results/`: 通話学習なし・AI教師段階・人手追加後の3モデルの文字出力、通話別CER、モデル間比較のJSONとCSV。詳細は[`FINAL_REPORT.md`](FINAL_REPORT.md)。
 
-正解はTTS入力文を連結したもの。TTS音声が逐語的に完全一致しているかは人手聴取で監査していない。正規化とS/D/Iの採点は元研究のhuman Gold v3.2と同じであることを、両モデルの合計60出力で照合した。NFKC、カタカナ→ひらがな、空白・句読点除去後にCERを計算する。漢数字と数字、漢字の異表記は誤りとして数える。
+正解はTTS入力文を連結したもの。TTS音声が逐語的に完全一致しているかは人手聴取で監査していない。正規化とS/D/Iの採点は元研究のhuman Gold v3.2と同じであることを、3モデルの合計90出力で照合した。NFKC、カタカナ→ひらがな、空白・句読点除去後にCERを計算する。漢数字と数字、漢字の異表記は誤りとして数える。
+
+| モデル | この研究の通話データによる追加学習 | 30件の合算CER |
+|---|---|---:|
+| `whisper_large_v3_zero_shot` | なし | 4.68% |
+| `pseudo_quality_full` | 自動文字起こし12,232通話 | 6.02% |
+| `quality_full_then_human_replay` | 上記に加えて人手文字起こし1,186通話 | 4.88% |
+
+通話学習なしのモデルはWhisper自体の事前学習済み重みです。この30件は創作音声であり、実通報の性能を表すものではありません。
 
 ## 別モデルを同じ30件で評価する
 
-GitHubにチェックポイントはない。先に[完全なfrozen bundleの入手・配置方法](../../docs/model_access.md)に従い、`local_bundles/<名前>/`に置く。音声と正解文はGitHubから取得できるので、Gemini APIキーや実通報データは評価に不要。
+GitHubにチェックポイントはない。先に[完全なfrozen bundleの入手・配置方法](../../docs/model_access.md)に従い、`local_bundles/<名前>/`に置く。音声と正解文はGitHubから取得できるので、Gemini APIキーや実通報データは評価に不要。通話学習なしの比較モデルは[`whisper_large_v3_zero_shot`](../../models/whisper_large_v3_zero_shot/README.md)で説明している。
 
 ```bash
 .venv/bin/python benchmark/mock119_30/evaluate_bundle.py \

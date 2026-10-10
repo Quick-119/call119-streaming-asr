@@ -1,13 +1,14 @@
 # 学習済みモデル一式の入手と実行
 
-このリポジトリには設定、推論コード、模擬通報ベンチマークを収録しています。**GitHub上のファイルだけではモデルを実行できません。** プロジェクトの管理者から、次のいずれかの完全なfrozen bundleをアクセス管理された別経路で入手してください。
+このリポジトリには設定、推論コード、模擬通報ベンチマークを収録しています。**GitHub上のファイルだけではモデルを実行できません。** 同じ0.5秒条件で比較した3モデルの完全なfrozen bundleは、プロジェクトの管理者からアクセス管理された別経路で入手してください。
 
 | bundleのディレクトリ名 | 用途 | 必要な`model/whisper.pt`のSHA-256 |
 |---|---|---|
 | `quality_full_then_human_replay` | 人手教師追加後の採用モデル | `8a8a65377c50c339aba765756b174e0069441c0649f6207f100f2f59aec0a466` |
 | `pseudo_quality_full` | 自動文字起こし教師段階の比較モデル | `6a6a1e65351d05384ed849dbd50258c95dfe10f2896598d6ab99e1359b03f685` |
+| `whisper_large_v3_zero_shot` | この研究の通話データでは追加学習していない比較モデル | `68c16d3d1a31760d28ffbba2bff68267cb3875cfe5a6d82306bc413bce0cd13b` |
 
-完全なbundleには、少なくとも`BUNDLE.json`、`STREAMING_CONFIG.json`、`model/whisper.pt`、`vendor/SimulStreaming/`、`vendor/silero_vad.jit`、`scripts/streaming_alignment_heads.py`と、`BUNDLE.json`に列挙されたその他のファイルが必要です。VADファイルのSHA-256は`e1122837f4154c511485fe0b9c64455f7b929c96fbb8d79fbdb336383ebd3720`です。読み込み前にbundle自身のマニフェストでファイルの整合性を確認します。**チェックポイント単体では、このストリーミング推論を同じ条件で実行できません。**
+完全なbundleには、少なくとも`BUNDLE.json`、`STREAMING_CONFIG.json`、`model/whisper.pt`、`vendor/SimulStreaming/`、`vendor/silero_vad.jit`、`scripts/streaming_alignment_heads.py`と、`BUNDLE.json`に列挙されたその他のファイルが必要です。VADファイルのSHA-256は`e1122837f4154c511485fe0b9c64455f7b929c96fbb8d79fbdb336383ebd3720`です。読み込み前にbundle自身のマニフェストでファイルの整合性を確認します。**チェックポイント単体では、このストリーミング推論を同じ条件で実行できません。** 未追加学習モデルの元のWhisper large-v3重みは公開モデルですが、ここで使ったnative FP16 bundleと同じ評価を再現するには、依存ファイルと固定設定もそろえる必要があります。
 
 入手したbundleを`local_bundles/<bundle名>/`に配置してください。`local_bundles/`はGitの追跡対象から除外しています。bundleや実通報の入力音声をコミットしないでください。
 
