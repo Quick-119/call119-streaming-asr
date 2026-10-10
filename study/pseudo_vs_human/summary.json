@@ -1,0 +1,123 @@
+{
+  "comparison": "human follow-up minus AI-teacher stage; negative CER change indicates improvement",
+  "source_corpus_calls": 14514,
+  "training": {
+    "ai_stage_calls": 12232,
+    "ai_stage_windows": 100801,
+    "ai_stage_hours": 498.23,
+    "human_followup_calls": 1186,
+    "human_followup_windows": 6258,
+    "human_followup_hours": 45.92,
+    "human_new_calls": 797,
+    "human_replayed_old_calls": 389,
+    "initial_adapter_note": "c37 had earlier human-data exposure"
+  },
+  "model_sha256": {
+    "ai_stage": "6a6a1e65351d05384ed849dbd50258c95dfe10f2896598d6ab99e1359b03f685",
+    "human_followup": "8a8a65377c50c339aba765756b174e0069441c0649f6207f100f2f59aec0a466"
+  },
+  "evaluation": {
+    "settings": {
+      "chunk_sec": 0.5,
+      "strict_chunk_cadence": true,
+      "beam": 3,
+      "frame_threshold": 75,
+      "fp16_weights": true
+    },
+    "splits": [
+      {
+        "split": "dev_old",
+        "calls": 23,
+        "known_characters": 19813,
+        "ai_errors": 4535,
+        "human_errors": 3233,
+        "ai_cer": 0.22889012264674707,
+        "human_cer": 0.16317569272699742,
+        "human_minus_ai_cer_points": -6.5714429919749655
+      },
+      {
+        "split": "dev_new",
+        "calls": 25,
+        "known_characters": 22236,
+        "ai_errors": 5117,
+        "human_errors": 3904,
+        "ai_cer": 0.2301223241590214,
+        "human_cer": 0.17557114588954847,
+        "human_minus_ai_cer_points": -5.455117826947292
+      },
+      {
+        "split": "test_old",
+        "calls": 24,
+        "known_characters": 20005,
+        "ai_errors": 5662,
+        "human_errors": 3755,
+        "ai_cer": 0.28302924268932766,
+        "human_cer": 0.18770307423144214,
+        "human_minus_ai_cer_points": -9.532616845788553
+      },
+      {
+        "split": "test_new",
+        "calls": 25,
+        "known_characters": 21437,
+        "ai_errors": 5361,
+        "human_errors": 3922,
+        "ai_cer": 0.2500816345570742,
+        "human_cer": 0.18295470448290338,
+        "human_minus_ai_cer_points": -6.712693007417083
+      },
+      {
+        "split": "test_fresh",
+        "calls": 50,
+        "known_characters": 43030,
+        "ai_errors": 12271,
+        "human_errors": 8013,
+        "ai_cer": 0.28517313502207764,
+        "human_cer": 0.186218917034627,
+        "human_minus_ai_cer_points": -9.895421798745062
+      },
+      {
+        "split": "test_fresh2",
+        "calls": 27,
+        "known_characters": 20859,
+        "ai_errors": 7114,
+        "human_errors": 5658,
+        "ai_cer": 0.34105182415264396,
+        "human_cer": 0.27124982022148714,
+        "human_minus_ai_cer_points": -6.980200393115681
+      }
+    ],
+    "development": {
+      "calls": 48,
+      "known_characters": 42049,
+      "ai_errors": 9652,
+      "human_errors": 7137,
+      "ai_cer": 0.22954172513020524,
+      "human_cer": 0.16973055245071225,
+      "human_minus_ai_cer_points": -5.981117267949298
+    },
+    "held_out": {
+      "calls": 126,
+      "known_characters": 105331,
+      "ai_errors": 30408,
+      "human_errors": 21348,
+      "ai_cer": 0.2886899393340992,
+      "human_cer": 0.20267537572034824,
+      "human_minus_ai_cer_points": -8.601456361375094
+    },
+    "all": {
+      "calls": 174,
+      "known_characters": 147380,
+      "ai_errors": 40060,
+      "human_errors": 28485,
+      "ai_cer": 0.27181435744334376,
+      "human_cer": 0.19327588546614194,
+      "human_minus_ai_cer_points": -7.853847197720179
+    },
+    "held_out_paired_bootstrap_95_interval_cer_points": [
+      -12.093170041433792,
+      -5.816351630054304
+    ],
+    "bootstrap_seed": 261009,
+    "bootstrap_replicates": 5000
+  }
+}
