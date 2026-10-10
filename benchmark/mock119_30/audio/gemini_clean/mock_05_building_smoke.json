@@ -1,0 +1,10 @@
+{
+  "id": "mock_05_building_smoke",
+  "model": "gemini-3.8-flash-tts",
+  "request_sha256": "6af94464214d121dd90c31c8c64c1ca1da3f7ac70b9d628ed3970ca4ab4c384b",
+  "audio_sha256": "280f2ca0108214433b58567393362b645bb17d2f26547a41049456ebd3cccbf8",
+  "sample_rate": 24000,
+  "channels": 1,
+  "duration_sec": 21.52,
+  "created_unix": 1791591700.8001952
+}

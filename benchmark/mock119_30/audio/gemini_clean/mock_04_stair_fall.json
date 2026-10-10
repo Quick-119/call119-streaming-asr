@@ -1,0 +1,10 @@
+{
+  "id": "mock_04_stair_fall",
+  "model": "gemini-3.8-flash-tts",
+  "request_sha256": "c7450cf6123d44a968d6679acdc427f05551d5517d40b840e3850486e517adb2",
+  "audio_sha256": "5b61e8e753088f336ad7cef41f150573e6b07621208195d08bd4a70ba8fd4f3f",
+  "sample_rate": 24000,
+  "channels": 1,
+  "duration_sec": 18.6,
+  "created_unix": 1791591687.264255
+}

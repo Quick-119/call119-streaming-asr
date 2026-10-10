@@ -54,6 +54,9 @@ def permitted(path: str) -> bool:
                 and p.parts[3] in {"gemini_clean", "telephone"}
                 and p.name.startswith("mock_") and p.suffix in {".wav", ".json"}):
             return True
+        if (len(p.parts) == 4 and p.parts[2] == "transcripts"
+                and p.name.startswith("mock_") and p.suffix == ".txt"):
+            return True
     return False
 
 
@@ -87,6 +90,7 @@ def main() -> None:
         if len(rows) != 30 or len({r["call_id"] for r in rows}) != 30:
             problems.append("Benchmark manifest must contain 30 unique synthetic calls")
         expected = set()
+        expected_sidecars = set()
         for row in rows:
             for prefix, hash_key in (("audio_path", "audio_sha256"),
                                      ("clean_audio_path", "clean_audio_sha256")):
@@ -98,9 +102,36 @@ def main() -> None:
                 expected.add(target.relative_to(ROOT).as_posix())
                 if not target.is_file() or sha(target) != row[hash_key]:
                     problems.append(f"Audio hash mismatch: {relative}")
+                sidecar = target.with_suffix(".json")
+                expected_sidecars.add(sidecar.relative_to(ROOT).as_posix())
+                if not sidecar.is_file():
+                    problems.append(f"Missing synthetic audio metadata: {sidecar}")
+                else:
+                    metadata = json.loads(sidecar.read_text())
+                    if metadata.get("audio_sha256") != row[hash_key]:
+                        problems.append(f"Audio metadata hash mismatch: {sidecar}")
         tracked_audio = {p for p in paths if p.endswith(".wav")}
         if tracked_audio != expected:
             problems.append("Tracked WAV files differ from synthetic manifest")
+        tracked_sidecars = {p for p in paths if p.startswith("benchmark/mock119_30/audio/")
+                            and p.endswith(".json")}
+        if tracked_sidecars != expected_sidecars:
+            problems.append("Tracked audio metadata differ from synthetic manifest")
+        scripts = json.loads((manifest.parent / "scripts.json").read_text())
+        if len(scripts) != 30 or [s["id"] for s in scripts] != [r["call_id"] for r in rows]:
+            problems.append("Synthetic scripts differ from benchmark manifest")
+        expected_transcripts = set()
+        for script in scripts:
+            name = f"benchmark/mock119_30/transcripts/{script['id']}.txt"
+            expected_transcripts.add(name)
+            lines = [("指令員" if turn["speaker"] == "Dispatcher" else "通報者") + "：" + turn["text"]
+                     for turn in script["turns"]]
+            transcript = "\n".join(lines) + "\n"
+            if not (ROOT / name).is_file() or (ROOT / name).read_text() != transcript:
+                problems.append(f"Synthetic transcript mismatch: {name}")
+        tracked_transcripts = {p for p in paths if p.startswith("benchmark/mock119_30/transcripts/")}
+        if tracked_transcripts != expected_transcripts:
+            problems.append("Tracked transcripts differ from synthetic scripts")
     elif any(p.endswith(".wav") for p in paths):
         problems.append("WAV files require a synthetic manifest")
     if problems:

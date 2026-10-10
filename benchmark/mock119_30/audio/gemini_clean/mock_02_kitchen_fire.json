@@ -1,0 +1,10 @@
+{
+  "id": "mock_02_kitchen_fire",
+  "model": "gemini-3.8-flash-tts",
+  "request_sha256": "5d146bed3f5bacc7c7396718705d9fd0250d3dd5c3139aaef4519a79718fc8c7",
+  "audio_sha256": "bdf890a366bd02a7adf4057bf7a05ed85099ff76d9a1c202a8c0c08b96760b2c",
+  "sample_rate": 24000,
+  "channels": 1,
+  "duration_sec": 20.32,
+  "created_unix": 1791591662.858395
+}

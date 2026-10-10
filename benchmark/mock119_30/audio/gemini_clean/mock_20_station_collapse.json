@@ -1,0 +1,10 @@
+{
+  "id": "mock_20_station_collapse",
+  "model": "gemini-3.8-flash-tts",
+  "request_sha256": "16fff8bb6938138b332f6580a87b15325c6d7ffa95d4fb2c6f874a026d51edb2",
+  "audio_sha256": "dece7e0f8ede215ab4056311165c9cf5e7fa00380b29ebc1ad807b884156110b",
+  "sample_rate": 24000,
+  "channels": 1,
+  "duration_sec": 18.16,
+  "created_unix": 1791592712.8661957
+}

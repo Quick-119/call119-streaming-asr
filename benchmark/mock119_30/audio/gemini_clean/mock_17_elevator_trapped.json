@@ -1,0 +1,10 @@
+{
+  "id": "mock_17_elevator_trapped",
+  "model": "gemini-3.8-flash-tts",
+  "request_sha256": "df0cab232c2822e60eb98826b1dfce09f53d8a2f0d121e19c3c22410c03a36c9",
+  "audio_sha256": "779c009b9b9302146322d47b637f9962dcc4e6cc7516a11487282c132cc3545d",
+  "sample_rate": 24000,
+  "channels": 1,
+  "duration_sec": 18.52,
+  "created_unix": 1791592673.7759953
+}

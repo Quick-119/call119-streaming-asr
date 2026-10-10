@@ -1,0 +1,10 @@
+{
+  "id": "mock_27_warehouse_odor",
+  "model": "gemini-3.8-flash-tts",
+  "request_sha256": "6a2ae8e43350587d0a07a1aeae36e3fa40a3862b4d0a291fad816c4730e3441c",
+  "audio_sha256": "835e7ada303cdb1fd4cb7518807b2e49a272ab70a7057f02fd08e011fe811263",
+  "sample_rate": 24000,
+  "channels": 1,
+  "duration_sec": 18.96,
+  "created_unix": 1791592800.2422078
+}

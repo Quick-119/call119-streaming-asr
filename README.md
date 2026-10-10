@@ -1,5 +1,7 @@
 # 119-call streaming ASR
 
+119番通報向けストリーミング音声認識の研究成果を公開するリポジトリです。学習済みモデルを使うには、管理者から**完全なfrozen bundle**を別途入手する必要があります。ここには設定・推論コード・集計結果と、実通報を一切使わずに作成した模擬通報30件の評価データを収録しています。実際の通報音声、文字起こし、チェックポイントは公開していません。詳しい入手物と手順は[モデル利用ガイド](docs/model_access.md)、追加モデルのCER評価は[模擬通報ベンチマーク](benchmark/mock119_30/README.md)を参照してください。
+
 Japanese emergency-call ASR research with a Whisper large-v3 model and 0.5-second SimulStreaming input updates. This repository contains the runtime integration, model configuration, aggregate study results, and a **fully synthetic** 30-call benchmark. It contains no real 119-call recordings or transcripts and no model checkpoints.
 
 ## What is here

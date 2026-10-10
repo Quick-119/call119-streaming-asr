@@ -1,0 +1,10 @@
+{
+  "id": "mock_13_pool_rescue",
+  "model": "gemini-3.8-flash-tts",
+  "request_sha256": "1e7f5108b5b74f10d290bc6955125dd5630e2db8e71fcae027b1ca05c2596298",
+  "audio_sha256": "6733f46eb35c525bfca3d3b66b99c8d35095c3eed6dab083ed367cd0c10d86df",
+  "sample_rate": 24000,
+  "channels": 1,
+  "duration_sec": 18.76,
+  "created_unix": 1791592622.897949
+}

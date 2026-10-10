@@ -1,0 +1,10 @@
+{
+  "id": "mock_18_labor",
+  "model": "gemini-3.8-flash-tts",
+  "request_sha256": "95a88e8aaef88f1512c32aa025e6e95b3db9f5d47a87c86a4c2c1c23a28d11e4",
+  "audio_sha256": "ac37a64aa3557c7011a6e300c7922b2acf6f11982b8e6d61074cb3bc384c771d",
+  "sample_rate": 24000,
+  "channels": 1,
+  "duration_sec": 19.16,
+  "created_unix": 1791592686.2002964
+}

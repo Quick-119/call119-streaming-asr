@@ -1,0 +1,10 @@
+{
+  "id": "mock_22_hiking_injury",
+  "model": "gemini-3.8-flash-tts",
+  "request_sha256": "2e90e66ed0b5d0aebb85d0da92c58b5a795fdff6131bda043f52cb133c4b8365",
+  "audio_sha256": "ad15a484458a448f24fd2b690786e4016ca23449f2486778214ebb00e7190453",
+  "sample_rate": 24000,
+  "channels": 1,
+  "duration_sec": 21.4,
+  "created_unix": 1791592738.4986174
+}

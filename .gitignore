@@ -13,6 +13,8 @@ outputs/
 **/records/
 **/evaluation/
 **/transcripts/
+!benchmark/mock119_30/transcripts/
+!benchmark/mock119_30/transcripts/mock_*.txt
 *.jsonl
 !benchmark/mock119_30/manifest.jsonl
 *.log

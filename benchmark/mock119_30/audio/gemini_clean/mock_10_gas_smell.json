@@ -1,0 +1,10 @@
+{
+  "id": "mock_10_gas_smell",
+  "model": "gemini-3.8-flash-tts",
+  "request_sha256": "099cc23fe49b9b17cef9bdc056d460eafd759adc8181c39420b236a7d767585a",
+  "audio_sha256": "6af446b2d6a5bf299427bdc9f7e672b9ae7e1d5174ad09dc4b0999a09c8bd848",
+  "sample_rate": 24000,
+  "channels": 1,
+  "duration_sec": 19.32,
+  "created_unix": 1791591763.096641
+}

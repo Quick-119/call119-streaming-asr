@@ -1,0 +1,10 @@
+{
+  "id": "mock_06_child_seizure",
+  "model": "gemini-3.8-flash-tts",
+  "request_sha256": "e6cd6a4ce0901e8a6538a9ced4f95135f7c8fbe56f4b0049a2e1590c60d60fd1",
+  "audio_sha256": "9d5d1f71a11dc9f68d88c61295e2363dd6340672ab45cb804e0c53dd613ea61a",
+  "sample_rate": 24000,
+  "channels": 1,
+  "duration_sec": 17.88,
+  "created_unix": 1791591711.9810162
+}

@@ -1,0 +1,10 @@
+{
+  "id": "mock_12_balcony_fire",
+  "model": "gemini-3.8-flash-tts",
+  "request_sha256": "18a3c00f3837f5cfd43ffed679ed98e6e1c7bb680fe66f7879fd9c6b226a2352",
+  "audio_sha256": "593dce8e098f1acde97fa8d87778d66175cd2445a2e1e0c59327ab17c167d9d9",
+  "sample_rate": 24000,
+  "channels": 1,
+  "duration_sec": 19.8,
+  "created_unix": 1791592610.3100562
+}

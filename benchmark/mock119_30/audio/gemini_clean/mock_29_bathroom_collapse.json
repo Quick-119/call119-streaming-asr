@@ -1,0 +1,10 @@
+{
+  "id": "mock_29_bathroom_collapse",
+  "model": "gemini-3.8-flash-tts",
+  "request_sha256": "4581d33f2c3446515d1327438baa5c6f3052ab0a15d14b9909818ea4627fbbba",
+  "audio_sha256": "d23f95137007cb11196e7281ab38b7ed3b65acc7fb6db8e086a5156190904a88",
+  "sample_rate": 24000,
+  "channels": 1,
+  "duration_sec": 17.76,
+  "created_unix": 1791592824.5061612
+}

@@ -1,0 +1,10 @@
+{
+  "id": "mock_03_bicycle_crash",
+  "model": "gemini-3.8-flash-tts",
+  "request_sha256": "e1c6c91ca7ae5d75872956c1d3c23d1d243fe956997d9f29753f662a15a12765",
+  "audio_sha256": "19b9d148a874690f34d5a0ed9a5d5f9d9bd29115f7074eda6f0c5f9985b3172f",
+  "sample_rate": 24000,
+  "channels": 1,
+  "duration_sec": 20.56,
+  "created_unix": 1791591675.7536042
+}

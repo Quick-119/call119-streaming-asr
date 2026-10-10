@@ -1,0 +1,10 @@
+{
+  "id": "mock_08_factory_injury",
+  "model": "gemini-3.8-flash-tts",
+  "request_sha256": "acffdaec32e51c2f2d0cfbab523e1fbe8db02b100be7415e9f92f39c5c345202",
+  "audio_sha256": "4525e5cc91ef2495c129927ac5b371b1409cd24d3b0cdcae450d89eddfce422f",
+  "sample_rate": 24000,
+  "channels": 1,
+  "duration_sec": 22.2,
+  "created_unix": 1791591737.7705152
+}

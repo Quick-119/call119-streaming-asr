@@ -1,0 +1,10 @@
+{
+  "id": "mock_23_choking",
+  "model": "gemini-3.8-flash-tts",
+  "request_sha256": "2e7261810684a85be816876f1bf0f9396bbe1f60d0fcfadbd057061e75a15e08",
+  "audio_sha256": "11824869e43d119ea8236cad322a849007ced8576dfe41ac25ed3d71ec8b9a89",
+  "sample_rate": 24000,
+  "channels": 1,
+  "duration_sec": 18.4,
+  "created_unix": 1791592749.8553295
+}

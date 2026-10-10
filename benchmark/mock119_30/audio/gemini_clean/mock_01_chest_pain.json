@@ -1,0 +1,10 @@
+{
+  "id": "mock_01_chest_pain",
+  "model": "gemini-3.8-flash-tts",
+  "request_sha256": "32f016d724ce5382ecfe06a980b0b963368ac53084a20f526a92c1ec070680b5",
+  "audio_sha256": "f51155210e2ec28d6d273a5a8b0dae92cb1dc17f193b7ea3cd18ff0754dd1099",
+  "sample_rate": 24000,
+  "channels": 1,
+  "duration_sec": 21.68,
+  "created_unix": 1791591648.0309198
+}
