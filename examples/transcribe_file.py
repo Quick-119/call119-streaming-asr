@@ -15,6 +15,7 @@ import soundfile as sf
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "runtime"))
 from shared_streaming import SharedStreamingASR  # noqa: E402
+from postprocess import correct_transcript  # noqa: E402
 
 
 def sha(path: Path) -> str:
@@ -47,8 +48,10 @@ def main() -> None:
     for offset in range(0, len(pcm), 8000):
         parts.append(engine.push("input", pcm[offset:offset + 8000]).get("text", ""))
     parts.append(engine.finish("input").get("text", ""))
-    transcript = "".join(parts)
+    raw_transcript = "".join(parts)
+    transcript = correct_transcript(raw_transcript)
     output.mkdir(parents=True)
+    (output / "transcript.raw.txt").write_text(raw_transcript + "\n")
     (output / "transcript.txt").write_text(transcript + "\n")
     (output / "run.json").write_text(json.dumps({
         "audio_sha256": sha(audio_path), "bundle_manifest_sha256": sha(bundle / "BUNDLE.json"),
@@ -57,6 +60,7 @@ def main() -> None:
         "chunk_sec": 0.5, "beam": 3, "frame_threshold": 75,
         "strict_chunk_cadence": True, "cross_sdpa_alignment": True,
         "fp16_weights": True,
+        "postprocess": "runtime/postprocess.py",
     }, ensure_ascii=False, indent=2) + "\n")
     print(output / "transcript.txt")
 

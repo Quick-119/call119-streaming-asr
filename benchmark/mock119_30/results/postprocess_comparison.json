@@ -1,0 +1,775 @@
+{
+  "results": [
+    {
+      "source": "quality_full_then_human_replay.json",
+      "model": "quality_full_then_human_replay",
+      "calls": 30,
+      "manifest_sha256": "a99ddf884789616fc856b346eecd88de32e4a93c80d745d5fb1b869c857d69e4",
+      "postprocess": "runtime/postprocess.py",
+      "before_errors": 150,
+      "after_errors": 137,
+      "N": 3075,
+      "before_cer": 0.04878048780487805,
+      "after_cer": 0.04455284552845529,
+      "changed_calls": 6,
+      "improved_calls": 6,
+      "worsened_calls": 0,
+      "per_call": [
+        {
+          "call_id": "mock_01_chest_pain",
+          "changed": false,
+          "before_errors": 4,
+          "after_errors": 4,
+          "error_delta": 0,
+          "N": 109
+        },
+        {
+          "call_id": "mock_02_kitchen_fire",
+          "changed": false,
+          "before_errors": 3,
+          "after_errors": 3,
+          "error_delta": 0,
+          "N": 104
+        },
+        {
+          "call_id": "mock_03_bicycle_crash",
+          "changed": false,
+          "before_errors": 2,
+          "after_errors": 2,
+          "error_delta": 0,
+          "N": 109
+        },
+        {
+          "call_id": "mock_04_stair_fall",
+          "changed": false,
+          "before_errors": 2,
+          "after_errors": 2,
+          "error_delta": 0,
+          "N": 96
+        },
+        {
+          "call_id": "mock_05_building_smoke",
+          "changed": true,
+          "before_errors": 5,
+          "after_errors": 4,
+          "error_delta": -1,
+          "N": 108
+        },
+        {
+          "call_id": "mock_06_child_seizure",
+          "changed": false,
+          "before_errors": 20,
+          "after_errors": 20,
+          "error_delta": 0,
+          "N": 111
+        },
+        {
+          "call_id": "mock_07_river_fall",
+          "changed": false,
+          "before_errors": 1,
+          "after_errors": 1,
+          "error_delta": 0,
+          "N": 99
+        },
+        {
+          "call_id": "mock_08_factory_injury",
+          "changed": true,
+          "before_errors": 9,
+          "after_errors": 5,
+          "error_delta": -4,
+          "N": 105
+        },
+        {
+          "call_id": "mock_09_heat_illness",
+          "changed": false,
+          "before_errors": 6,
+          "after_errors": 6,
+          "error_delta": 0,
+          "N": 108
+        },
+        {
+          "call_id": "mock_10_gas_smell",
+          "changed": false,
+          "before_errors": 5,
+          "after_errors": 5,
+          "error_delta": 0,
+          "N": 104
+        },
+        {
+          "call_id": "mock_11_restaurant_collapse",
+          "changed": false,
+          "before_errors": 0,
+          "after_errors": 0,
+          "error_delta": 0,
+          "N": 111
+        },
+        {
+          "call_id": "mock_12_balcony_fire",
+          "changed": true,
+          "before_errors": 8,
+          "after_errors": 7,
+          "error_delta": -1,
+          "N": 103
+        },
+        {
+          "call_id": "mock_13_pool_rescue",
+          "changed": false,
+          "before_errors": 6,
+          "after_errors": 6,
+          "error_delta": 0,
+          "N": 106
+        },
+        {
+          "call_id": "mock_14_motorcycle_crash",
+          "changed": false,
+          "before_errors": 0,
+          "after_errors": 0,
+          "error_delta": 0,
+          "N": 104
+        },
+        {
+          "call_id": "mock_15_food_allergy",
+          "changed": false,
+          "before_errors": 4,
+          "after_errors": 4,
+          "error_delta": 0,
+          "N": 103
+        },
+        {
+          "call_id": "mock_16_grass_fire",
+          "changed": true,
+          "before_errors": 5,
+          "after_errors": 2,
+          "error_delta": -3,
+          "N": 98
+        },
+        {
+          "call_id": "mock_17_elevator_trapped",
+          "changed": false,
+          "before_errors": 5,
+          "after_errors": 5,
+          "error_delta": 0,
+          "N": 101
+        },
+        {
+          "call_id": "mock_18_labor",
+          "changed": false,
+          "before_errors": 5,
+          "after_errors": 5,
+          "error_delta": 0,
+          "N": 96
+        },
+        {
+          "call_id": "mock_19_school_smoke",
+          "changed": false,
+          "before_errors": 2,
+          "after_errors": 2,
+          "error_delta": 0,
+          "N": 104
+        },
+        {
+          "call_id": "mock_20_station_collapse",
+          "changed": false,
+          "before_errors": 6,
+          "after_errors": 6,
+          "error_delta": 0,
+          "N": 98
+        },
+        {
+          "call_id": "mock_21_garage_fire",
+          "changed": false,
+          "before_errors": 6,
+          "after_errors": 6,
+          "error_delta": 0,
+          "N": 89
+        },
+        {
+          "call_id": "mock_22_hiking_injury",
+          "changed": false,
+          "before_errors": 5,
+          "after_errors": 5,
+          "error_delta": 0,
+          "N": 109
+        },
+        {
+          "call_id": "mock_23_choking",
+          "changed": false,
+          "before_errors": 5,
+          "after_errors": 5,
+          "error_delta": 0,
+          "N": 95
+        },
+        {
+          "call_id": "mock_24_heater_fumes",
+          "changed": false,
+          "before_errors": 4,
+          "after_errors": 4,
+          "error_delta": 0,
+          "N": 101
+        },
+        {
+          "call_id": "mock_25_playground_fall",
+          "changed": false,
+          "before_errors": 2,
+          "after_errors": 2,
+          "error_delta": 0,
+          "N": 92
+        },
+        {
+          "call_id": "mock_26_slope_collapse",
+          "changed": true,
+          "before_errors": 3,
+          "after_errors": 1,
+          "error_delta": -2,
+          "N": 113
+        },
+        {
+          "call_id": "mock_27_warehouse_odor",
+          "changed": false,
+          "before_errors": 14,
+          "after_errors": 14,
+          "error_delta": 0,
+          "N": 100
+        },
+        {
+          "call_id": "mock_28_abdominal_pain",
+          "changed": true,
+          "before_errors": 7,
+          "after_errors": 5,
+          "error_delta": -2,
+          "N": 96
+        },
+        {
+          "call_id": "mock_29_bathroom_collapse",
+          "changed": false,
+          "before_errors": 5,
+          "after_errors": 5,
+          "error_delta": 0,
+          "N": 90
+        },
+        {
+          "call_id": "mock_30_bus_smoke",
+          "changed": false,
+          "before_errors": 1,
+          "after_errors": 1,
+          "error_delta": 0,
+          "N": 113
+        }
+      ]
+    },
+    {
+      "source": "pseudo_quality_full.json",
+      "model": "pseudo_quality_full",
+      "calls": 30,
+      "manifest_sha256": "a99ddf884789616fc856b346eecd88de32e4a93c80d745d5fb1b869c857d69e4",
+      "postprocess": "runtime/postprocess.py",
+      "before_errors": 185,
+      "after_errors": 172,
+      "N": 3075,
+      "before_cer": 0.06016260162601626,
+      "after_cer": 0.0559349593495935,
+      "changed_calls": 6,
+      "improved_calls": 6,
+      "worsened_calls": 0,
+      "per_call": [
+        {
+          "call_id": "mock_01_chest_pain",
+          "changed": false,
+          "before_errors": 10,
+          "after_errors": 10,
+          "error_delta": 0,
+          "N": 109
+        },
+        {
+          "call_id": "mock_02_kitchen_fire",
+          "changed": false,
+          "before_errors": 9,
+          "after_errors": 9,
+          "error_delta": 0,
+          "N": 104
+        },
+        {
+          "call_id": "mock_03_bicycle_crash",
+          "changed": false,
+          "before_errors": 3,
+          "after_errors": 3,
+          "error_delta": 0,
+          "N": 109
+        },
+        {
+          "call_id": "mock_04_stair_fall",
+          "changed": false,
+          "before_errors": 2,
+          "after_errors": 2,
+          "error_delta": 0,
+          "N": 96
+        },
+        {
+          "call_id": "mock_05_building_smoke",
+          "changed": true,
+          "before_errors": 9,
+          "after_errors": 8,
+          "error_delta": -1,
+          "N": 108
+        },
+        {
+          "call_id": "mock_06_child_seizure",
+          "changed": false,
+          "before_errors": 17,
+          "after_errors": 17,
+          "error_delta": 0,
+          "N": 111
+        },
+        {
+          "call_id": "mock_07_river_fall",
+          "changed": false,
+          "before_errors": 5,
+          "after_errors": 5,
+          "error_delta": 0,
+          "N": 99
+        },
+        {
+          "call_id": "mock_08_factory_injury",
+          "changed": true,
+          "before_errors": 9,
+          "after_errors": 5,
+          "error_delta": -4,
+          "N": 105
+        },
+        {
+          "call_id": "mock_09_heat_illness",
+          "changed": false,
+          "before_errors": 3,
+          "after_errors": 3,
+          "error_delta": 0,
+          "N": 108
+        },
+        {
+          "call_id": "mock_10_gas_smell",
+          "changed": false,
+          "before_errors": 7,
+          "after_errors": 7,
+          "error_delta": 0,
+          "N": 104
+        },
+        {
+          "call_id": "mock_11_restaurant_collapse",
+          "changed": false,
+          "before_errors": 0,
+          "after_errors": 0,
+          "error_delta": 0,
+          "N": 111
+        },
+        {
+          "call_id": "mock_12_balcony_fire",
+          "changed": true,
+          "before_errors": 12,
+          "after_errors": 11,
+          "error_delta": -1,
+          "N": 103
+        },
+        {
+          "call_id": "mock_13_pool_rescue",
+          "changed": false,
+          "before_errors": 9,
+          "after_errors": 9,
+          "error_delta": 0,
+          "N": 106
+        },
+        {
+          "call_id": "mock_14_motorcycle_crash",
+          "changed": false,
+          "before_errors": 2,
+          "after_errors": 2,
+          "error_delta": 0,
+          "N": 104
+        },
+        {
+          "call_id": "mock_15_food_allergy",
+          "changed": false,
+          "before_errors": 6,
+          "after_errors": 6,
+          "error_delta": 0,
+          "N": 103
+        },
+        {
+          "call_id": "mock_16_grass_fire",
+          "changed": true,
+          "before_errors": 7,
+          "after_errors": 4,
+          "error_delta": -3,
+          "N": 98
+        },
+        {
+          "call_id": "mock_17_elevator_trapped",
+          "changed": false,
+          "before_errors": 7,
+          "after_errors": 7,
+          "error_delta": 0,
+          "N": 101
+        },
+        {
+          "call_id": "mock_18_labor",
+          "changed": false,
+          "before_errors": 7,
+          "after_errors": 7,
+          "error_delta": 0,
+          "N": 96
+        },
+        {
+          "call_id": "mock_19_school_smoke",
+          "changed": false,
+          "before_errors": 2,
+          "after_errors": 2,
+          "error_delta": 0,
+          "N": 104
+        },
+        {
+          "call_id": "mock_20_station_collapse",
+          "changed": false,
+          "before_errors": 6,
+          "after_errors": 6,
+          "error_delta": 0,
+          "N": 98
+        },
+        {
+          "call_id": "mock_21_garage_fire",
+          "changed": false,
+          "before_errors": 6,
+          "after_errors": 6,
+          "error_delta": 0,
+          "N": 89
+        },
+        {
+          "call_id": "mock_22_hiking_injury",
+          "changed": false,
+          "before_errors": 2,
+          "after_errors": 2,
+          "error_delta": 0,
+          "N": 109
+        },
+        {
+          "call_id": "mock_23_choking",
+          "changed": false,
+          "before_errors": 6,
+          "after_errors": 6,
+          "error_delta": 0,
+          "N": 95
+        },
+        {
+          "call_id": "mock_24_heater_fumes",
+          "changed": false,
+          "before_errors": 3,
+          "after_errors": 3,
+          "error_delta": 0,
+          "N": 101
+        },
+        {
+          "call_id": "mock_25_playground_fall",
+          "changed": false,
+          "before_errors": 3,
+          "after_errors": 3,
+          "error_delta": 0,
+          "N": 92
+        },
+        {
+          "call_id": "mock_26_slope_collapse",
+          "changed": true,
+          "before_errors": 3,
+          "after_errors": 1,
+          "error_delta": -2,
+          "N": 113
+        },
+        {
+          "call_id": "mock_27_warehouse_odor",
+          "changed": false,
+          "before_errors": 14,
+          "after_errors": 14,
+          "error_delta": 0,
+          "N": 100
+        },
+        {
+          "call_id": "mock_28_abdominal_pain",
+          "changed": true,
+          "before_errors": 8,
+          "after_errors": 6,
+          "error_delta": -2,
+          "N": 96
+        },
+        {
+          "call_id": "mock_29_bathroom_collapse",
+          "changed": false,
+          "before_errors": 7,
+          "after_errors": 7,
+          "error_delta": 0,
+          "N": 90
+        },
+        {
+          "call_id": "mock_30_bus_smoke",
+          "changed": false,
+          "before_errors": 1,
+          "after_errors": 1,
+          "error_delta": 0,
+          "N": 113
+        }
+      ]
+    },
+    {
+      "source": "whisper_large_v3_zero_shot.json",
+      "model": "whisper_large_v3_zero_shot",
+      "calls": 30,
+      "manifest_sha256": "a99ddf884789616fc856b346eecd88de32e4a93c80d745d5fb1b869c857d69e4",
+      "postprocess": "runtime/postprocess.py",
+      "before_errors": 144,
+      "after_errors": 134,
+      "N": 3075,
+      "before_cer": 0.04682926829268293,
+      "after_cer": 0.043577235772357725,
+      "changed_calls": 5,
+      "improved_calls": 5,
+      "worsened_calls": 0,
+      "per_call": [
+        {
+          "call_id": "mock_01_chest_pain",
+          "changed": false,
+          "before_errors": 6,
+          "after_errors": 6,
+          "error_delta": 0,
+          "N": 109
+        },
+        {
+          "call_id": "mock_02_kitchen_fire",
+          "changed": false,
+          "before_errors": 4,
+          "after_errors": 4,
+          "error_delta": 0,
+          "N": 104
+        },
+        {
+          "call_id": "mock_03_bicycle_crash",
+          "changed": false,
+          "before_errors": 5,
+          "after_errors": 5,
+          "error_delta": 0,
+          "N": 109
+        },
+        {
+          "call_id": "mock_04_stair_fall",
+          "changed": false,
+          "before_errors": 4,
+          "after_errors": 4,
+          "error_delta": 0,
+          "N": 96
+        },
+        {
+          "call_id": "mock_05_building_smoke",
+          "changed": true,
+          "before_errors": 6,
+          "after_errors": 5,
+          "error_delta": -1,
+          "N": 108
+        },
+        {
+          "call_id": "mock_06_child_seizure",
+          "changed": false,
+          "before_errors": 17,
+          "after_errors": 17,
+          "error_delta": 0,
+          "N": 111
+        },
+        {
+          "call_id": "mock_07_river_fall",
+          "changed": false,
+          "before_errors": 1,
+          "after_errors": 1,
+          "error_delta": 0,
+          "N": 99
+        },
+        {
+          "call_id": "mock_08_factory_injury",
+          "changed": true,
+          "before_errors": 9,
+          "after_errors": 5,
+          "error_delta": -4,
+          "N": 105
+        },
+        {
+          "call_id": "mock_09_heat_illness",
+          "changed": false,
+          "before_errors": 1,
+          "after_errors": 1,
+          "error_delta": 0,
+          "N": 108
+        },
+        {
+          "call_id": "mock_10_gas_smell",
+          "changed": false,
+          "before_errors": 5,
+          "after_errors": 5,
+          "error_delta": 0,
+          "N": 104
+        },
+        {
+          "call_id": "mock_11_restaurant_collapse",
+          "changed": false,
+          "before_errors": 1,
+          "after_errors": 1,
+          "error_delta": 0,
+          "N": 111
+        },
+        {
+          "call_id": "mock_12_balcony_fire",
+          "changed": true,
+          "before_errors": 7,
+          "after_errors": 6,
+          "error_delta": -1,
+          "N": 103
+        },
+        {
+          "call_id": "mock_13_pool_rescue",
+          "changed": false,
+          "before_errors": 6,
+          "after_errors": 6,
+          "error_delta": 0,
+          "N": 106
+        },
+        {
+          "call_id": "mock_14_motorcycle_crash",
+          "changed": false,
+          "before_errors": 2,
+          "after_errors": 2,
+          "error_delta": 0,
+          "N": 104
+        },
+        {
+          "call_id": "mock_15_food_allergy",
+          "changed": false,
+          "before_errors": 3,
+          "after_errors": 3,
+          "error_delta": 0,
+          "N": 103
+        },
+        {
+          "call_id": "mock_16_grass_fire",
+          "changed": false,
+          "before_errors": 7,
+          "after_errors": 7,
+          "error_delta": 0,
+          "N": 98
+        },
+        {
+          "call_id": "mock_17_elevator_trapped",
+          "changed": false,
+          "before_errors": 4,
+          "after_errors": 4,
+          "error_delta": 0,
+          "N": 101
+        },
+        {
+          "call_id": "mock_18_labor",
+          "changed": false,
+          "before_errors": 4,
+          "after_errors": 4,
+          "error_delta": 0,
+          "N": 96
+        },
+        {
+          "call_id": "mock_19_school_smoke",
+          "changed": false,
+          "before_errors": 2,
+          "after_errors": 2,
+          "error_delta": 0,
+          "N": 104
+        },
+        {
+          "call_id": "mock_20_station_collapse",
+          "changed": false,
+          "before_errors": 3,
+          "after_errors": 3,
+          "error_delta": 0,
+          "N": 98
+        },
+        {
+          "call_id": "mock_21_garage_fire",
+          "changed": false,
+          "before_errors": 9,
+          "after_errors": 9,
+          "error_delta": 0,
+          "N": 89
+        },
+        {
+          "call_id": "mock_22_hiking_injury",
+          "changed": false,
+          "before_errors": 2,
+          "after_errors": 2,
+          "error_delta": 0,
+          "N": 109
+        },
+        {
+          "call_id": "mock_23_choking",
+          "changed": false,
+          "before_errors": 5,
+          "after_errors": 5,
+          "error_delta": 0,
+          "N": 95
+        },
+        {
+          "call_id": "mock_24_heater_fumes",
+          "changed": false,
+          "before_errors": 4,
+          "after_errors": 4,
+          "error_delta": 0,
+          "N": 101
+        },
+        {
+          "call_id": "mock_25_playground_fall",
+          "changed": false,
+          "before_errors": 3,
+          "after_errors": 3,
+          "error_delta": 0,
+          "N": 92
+        },
+        {
+          "call_id": "mock_26_slope_collapse",
+          "changed": true,
+          "before_errors": 3,
+          "after_errors": 1,
+          "error_delta": -2,
+          "N": 113
+        },
+        {
+          "call_id": "mock_27_warehouse_odor",
+          "changed": false,
+          "before_errors": 11,
+          "after_errors": 11,
+          "error_delta": 0,
+          "N": 100
+        },
+        {
+          "call_id": "mock_28_abdominal_pain",
+          "changed": true,
+          "before_errors": 7,
+          "after_errors": 5,
+          "error_delta": -2,
+          "N": 96
+        },
+        {
+          "call_id": "mock_29_bathroom_collapse",
+          "changed": false,
+          "before_errors": 2,
+          "after_errors": 2,
+          "error_delta": 0,
+          "N": 90
+        },
+        {
+          "call_id": "mock_30_bus_smoke",
+          "changed": false,
+          "before_errors": 1,
+          "after_errors": 1,
+          "error_delta": 0,
+          "N": 113
+        }
+      ]
+    }
+  ]
+}

@@ -42,14 +42,14 @@ def permitted(path: str) -> bool:
         if len(p.parts) == 3 and p.name in {
             "README.md", "FINAL_REPORT.md", "AUDIO_INDEX.md", "scripts.json", "manifest.jsonl",
             "generate_tts.py", "prepare_benchmark.py", "evaluate_bundle.py",
-            "compare_results.py", "scoring.py",
+            "compare_results.py", "evaluate_postprocess.py", "scoring.py",
         }:
             return True
         if len(p.parts) == 4 and p.parts[2] == "results" and p.name in {
             "pseudo_quality_full.json", "quality_full_then_human_replay.json",
             "whisper_large_v3_zero_shot.json", "zero_shot_vs_ai.json", "zero_shot_vs_ai.csv",
             "zero_shot_vs_human.json", "zero_shot_vs_human.csv",
-            "comparison.json", "comparison.csv"
+            "comparison.json", "comparison.csv", "postprocess_comparison.json"
         }:
             return True
         if (len(p.parts) == 5 and p.parts[2] == "audio"
@@ -167,6 +167,24 @@ def main() -> None:
                 call.get("call_id") for call in result.get("per_call", [])
             ] != expected_ids:
                 problems.append(f"Comparison differs from synthetic manifest: {name}")
+        postprocess_path = manifest.parent / "results/postprocess_comparison.json"
+        if postprocess_path.exists():
+            postprocess = json.loads(postprocess_path.read_text())
+            expected_sources = {
+                "quality_full_then_human_replay.json", "pseudo_quality_full.json",
+                "whisper_large_v3_zero_shot.json",
+            }
+            results = postprocess.get("results", [])
+            if {row.get("source") for row in results} != expected_sources or len(results) != 3:
+                problems.append("Postprocess results must cover the three synthetic models")
+            for row in results:
+                calls = row.get("per_call", [])
+                if (row.get("manifest_sha256") != sha(manifest)
+                        or row.get("calls") != 30
+                        or [call.get("call_id") for call in calls] != expected_ids):
+                    problems.append("Postprocess result differs from synthetic manifest")
+                if nested_keys(row) & {"hypothesis", "reference", "audio_path", "gold_text"}:
+                    problems.append("Postprocess result contains transcript or audio fields")
     elif any(p.endswith(".wav") for p in paths):
         problems.append("WAV files require a synthetic manifest")
     for name in ("summary.json", "zero_shot_comparison.json"):

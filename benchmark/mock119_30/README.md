@@ -42,6 +42,14 @@ GitHubにチェックポイントはない。先に[完全なfrozen bundleの入
 
 比較スクリプトはマニフェストと推論条件の一致を検証する。評価は10通話ずつ3組で、厳密な0.5秒刻みの入力、beam 3、frame threshold 75、FP16重み、cross SDPA alignment、decoder microbatch 20を使用する。**0.5秒は入力更新間隔で、実時間の表示遅延保証ではない。**
 
+推論済みの結果に限定的な正規表現補正を適用したCERを比較する場合は、`evaluate_postprocess.py`を使う。公開済み3モデルの通話別比較は[`postprocess_comparison.json`](results/postprocess_comparison.json)、採用基準と実通報での別評価は[後処理の検証](../../docs/postprocessing.md)に記載した。
+
+```bash
+python benchmark/mock119_30/evaluate_postprocess.py \
+  --input runs/mock119_30/my_model/result.json \
+  --output runs/mock119_30/my_model/postprocess.json
+```
+
 ## 再生成について
 
 `generate_tts.py`を再実行する場合だけGemini APIキーが必要。キーは環境変数`GEMINI_API_KEY`または`--api-key-file`で渡し、リポジトリへ保存しない。既存音声はリクエストと音声のSHA-256が一致する場合だけ再利用する。`prepare_benchmark.py`は雑音を固定した乱数シードで再生成し、マニフェストを検証・更新する。TTSを新規生成すると波形が変わる可能性があるため、公開済み30件と別のベンチマークとして保存・評価すること。
