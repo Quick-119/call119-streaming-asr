@@ -21,7 +21,11 @@ def evaluate(path: Path) -> dict:
     if result.get("manifest_sha256") != manifest_hash:
         raise ValueError("模擬通報の評価マニフェストが異なります")
     calls = result.get("per_call", [])
-    if len(calls) != 30:
+    manifest = [json.loads(line) for line in (HERE / "manifest.jsonl").read_text().splitlines() if line]
+    if (len(calls) != 30
+            or [call.get("call_id") for call in calls] != [row["call_id"] for row in manifest]
+            or any(call.get("reference_normalized") != row["gold_normalized"]
+                   for call, row in zip(calls, manifest))):
         raise ValueError("模擬通報30件の結果を指定してください")
     details = []
     for call in calls:
