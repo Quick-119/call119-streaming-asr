@@ -11,6 +11,7 @@ Whisper large-v3とSimulStreamingを使った、119番通報向け音声認識�
 | [`examples/`](examples/) | 別途入手した完全なモデル一式を使い、音声ファイル1件を推論する例 |
 | [`study/pseudo_vs_human/`](study/pseudo_vs_human/) | 実通報の評価における集計比較。通話ごとのデータは含まない |
 | [`benchmark/mock119_30/`](benchmark/mock119_30/) | Gemini TTSによる創作台本・模擬音声・正解文・30件のCER評価結果 |
+| [`docs/postprocessing.md`](docs/postprocessing.md) | 誤認識の個別調査、限定的な正規表現補正、CERの再評価 |
 
 2026年10月8日時点で選んだモデルは`quality_full_then_human_replay`です。自動文字起こしした12,232通話で学習した後、人手で文字起こしした1,186通話を使って追加学習しています。自動文字起こし教師段階のモデルは`pseudo_quality_full`、この研究の通話データで追加学習していない比較モデルは`whisper_large_v3_zero_shot`です。元の候補コーパスは14,514通話ですが、自動文字起こし教師段階で使用したのは品質選別後の12,232通話です。後半2モデルの出発点である`c37`アダプターには以前の人手データによる学習が含まれます。したがって、後半2モデルの差は**最後の人手教師追加段階の効果**を示す一方、自動文字起こし教師段階そのものを純粋なAIのみの学習と解釈することはできません。
 
@@ -28,6 +29,8 @@ python examples/transcribe_file.py \
 ```
 
 16 kHzの音声を8,000サンプルずつ入力します。**0.5秒は音声の入力更新間隔であり、認識結果の表示遅延を保証する値ではありません。** 別のbundleを同じ模擬通報30件で評価する方法は[ベンチマーク利用ガイド](benchmark/mock119_30/README.md)を参照してください。推論と模擬通報の評価に実通報データは不要です。
+
+推論例は `transcript.raw.txt` にモデルの出力、`transcript.txt` に限定的な後処理を適用した出力を保存します。[後処理の検証結果](docs/postprocessing.md)では、採用した規則と通話ごとのCER悪化確認を説明しています。
 
 ## CERの集計結果
 
