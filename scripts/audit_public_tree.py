@@ -38,6 +38,11 @@ def permitted(path: str) -> bool:
         "README.md", "summary.json", "zero_shot_comparison.json"
     }:
         return True
+    if p.parts[:2] == ("study", "cadence_comparison") and len(p.parts) == 3 and p.name in {
+        "README.md", "COMPARISON_AGGREGATE.json", "common.py", "run_streaming.py",
+        "run_offline.py", "summarize.py"
+    }:
+        return True
     if p.parts[:2] == ("benchmark", "mock119_30"):
         if len(p.parts) == 3 and p.name in {
             "README.md", "FINAL_REPORT.md", "AUDIO_INDEX.md", "scripts.json", "manifest.jsonl",
@@ -178,6 +183,14 @@ def main() -> None:
             found = nested_keys(json.loads(summary.read_text())) & forbidden
             if found:
                 problems.append(f"Private call-level fields in aggregate study: {name}: {found}")
+    cadence_summary = ROOT / "study/cadence_comparison/COMPARISON_AGGREGATE.json"
+    if cadence_summary.exists():
+        forbidden = {"call_id", "audio_path", "gold_text", "hypothesis", "reference",
+                     "per_call", "per_call_private_aggregate", "transcript_sha256",
+                     "audio_sha256", "source_sha256", "manifest_sha256"}
+        found = nested_keys(json.loads(cadence_summary.read_text())) & forbidden
+        if found:
+            problems.append(f"Private call-level fields in cadence aggregate: {found}")
     if problems:
         raise SystemExit("\n".join(problems))
     print(f"Public-tree audit passed: {len(paths)} tracked files")
