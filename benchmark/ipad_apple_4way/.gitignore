@@ -1,0 +1,5 @@
+private/
+*.zip
+DerivedData/
+.DS_Store
+__pycache__/
