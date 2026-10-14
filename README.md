@@ -11,6 +11,7 @@ Whisper large-v3とSimulStreamingを使った、119番通報向け音声認識�
 | [`examples/`](examples/) | 別途入手した完全なモデル一式を使い、音声ファイル1件を推論する例 |
 | [`study/pseudo_vs_human/`](study/pseudo_vs_human/) | 実通報の評価における集計比較。通話ごとのデータは含まない |
 | [`benchmark/mock119_30/`](benchmark/mock119_30/) | Gemini TTSによる創作台本・模擬音声・正解文・30件のCER評価結果 |
+| [`benchmark/ipad_apple_4way/`](benchmark/ipad_apple_4way/) | iPadでSFSpeechRecognizer・SpeechTranscriberのファイル入力／0.5秒入力を比較するアプリと非公開Gold用採点器 |
 
 2026年10月8日時点で選んだモデルは`quality_full_then_human_replay`です。自動文字起こしした12,232通話で学習した後、人手で文字起こしした1,186通話を使って追加学習しています。自動文字起こし教師段階のモデルは`pseudo_quality_full`、この研究の通話データで追加学習していない比較モデルは`whisper_large_v3_zero_shot`です。元の候補コーパスは14,514通話ですが、自動文字起こし教師段階で使用したのは品質選別後の12,232通話です。後半2モデルの出発点である`c37`アダプターには以前の人手データによる学習が含まれます。したがって、後半2モデルの差は**最後の人手教師追加段階の効果**を示す一方、自動文字起こし教師段階そのものを純粋なAIのみの学習と解釈することはできません。
 

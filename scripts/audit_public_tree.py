@@ -10,7 +10,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 FIXED = {".gitignore", "README.md", "scripts/audit_public_tree.py"}
-TEXT_SUFFIXES = {".md", ".py", ".json", ".jsonl", ".csv", ".txt"}
+TEXT_SUFFIXES = {".md", ".py", ".json", ".jsonl", ".csv", ".txt",
+                 ".swift", ".plist", ".pbxproj"}
 BLOCKED_TEXT = (
     re.compile(b"/home/" + b"okazaki/"),
     re.compile(b"call119_asr_" + b"dataset"),
@@ -58,6 +59,19 @@ def permitted(path: str) -> bool:
             return True
         if (len(p.parts) == 4 and p.parts[2] == "transcripts"
                 and p.name.startswith("mock_") and p.suffix == ".txt"):
+            return True
+    if p.parts[:2] == ("benchmark", "ipad_apple_4way"):
+        if len(p.parts) == 3 and p.name in {".gitignore", "README.md", "VALIDATION.md"}:
+            return True
+        if len(p.parts) == 4 and p.parts[2] == "server" and p.name == "score_results.py":
+            return True
+        if len(p.parts) == 5 and p.parts[2:4] == ("mac", "Call119AppleEval") and p.name in {
+            "BenchmarkTypes.swift", "BenchmarkViewModel.swift", "Call119AppleEvalApp.swift",
+            "ContentView.swift", "Info.plist", "StreamEngines.swift"
+        }:
+            return True
+        if (len(p.parts) == 5 and p.parts[2:4] == ("mac", "Call119AppleEval.xcodeproj")
+                and p.name == "project.pbxproj"):
             return True
     return False
 
