@@ -1,0 +1,35 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {};
+	objectVersion = 56;
+	objects = {
+		A10000000000000000000001 = {isa = PBXBuildFile; fileRef = A20000000000000000000001; };
+		A10000000000000000000002 = {isa = PBXBuildFile; fileRef = A20000000000000000000002; };
+		A10000000000000000000003 = {isa = PBXBuildFile; fileRef = A20000000000000000000003; };
+		A10000000000000000000004 = {isa = PBXBuildFile; fileRef = A20000000000000000000004; };
+		A10000000000000000000005 = {isa = PBXBuildFile; fileRef = A20000000000000000000005; };
+		A20000000000000000000001 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Call119AppleEvalApp.swift; sourceTree = "<group>"; };
+		A20000000000000000000002 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenchmarkTypes.swift; sourceTree = "<group>"; };
+		A20000000000000000000003 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamEngines.swift; sourceTree = "<group>"; };
+		A20000000000000000000004 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenchmarkViewModel.swift; sourceTree = "<group>"; };
+		A20000000000000000000005 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A20000000000000000000006 = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A20000000000000000000007 = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Call119AppleEval.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A30000000000000000000001 = {isa = PBXGroup; children = (A30000000000000000000002, A30000000000000000000003); sourceTree = "<group>"; };
+		A30000000000000000000002 = {isa = PBXGroup; children = (A20000000000000000000001, A20000000000000000000002, A20000000000000000000003, A20000000000000000000004, A20000000000000000000005, A20000000000000000000006); path = Call119AppleEval; sourceTree = "<group>"; };
+		A30000000000000000000003 = {isa = PBXGroup; children = (A20000000000000000000007); name = Products; sourceTree = "<group>"; };
+		A40000000000000000000001 = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (A10000000000000000000001, A10000000000000000000002, A10000000000000000000003, A10000000000000000000004, A10000000000000000000005); runOnlyForDeploymentPostprocessing = 0; };
+		A50000000000000000000001 = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+		A60000000000000000000001 = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+		A70000000000000000000001 = {isa = PBXNativeTarget; buildConfigurationList = A90000000000000000000002; buildPhases = (A40000000000000000000001, A50000000000000000000001, A60000000000000000000001); buildRules = (); dependencies = (); name = Call119AppleEval; productName = Call119AppleEval; productReference = A20000000000000000000007; productType = "com.apple.product-type.application"; };
+		A80000000000000000000001 = {isa = PBXProject; attributes = {BuildIndependentTargetsInParallel = YES; LastUpgradeCheck = 2600; TargetAttributes = {A70000000000000000000001 = {CreatedOnToolsVersion = 26.0; ProvisioningStyle = Automatic; }; }; }; buildConfigurationList = A90000000000000000000001; compatibilityVersion = "Xcode 14.0"; developmentRegion = ja; hasScannedForEncodings = 0; knownRegions = (ja, en, Base); mainGroup = A30000000000000000000001; productRefGroup = A30000000000000000000003; projectDirPath = ""; projectRoot = ""; targets = (A70000000000000000000001); };
+		A90000000000000000000001 = {isa = XCConfigurationList; buildConfigurations = (AA0000000000000000000001, AA0000000000000000000002); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+		A90000000000000000000002 = {isa = XCConfigurationList; buildConfigurations = (AA0000000000000000000003, AA0000000000000000000004); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+		AA0000000000000000000001 = {isa = XCBuildConfiguration; buildSettings = {ALWAYS_SEARCH_USER_PATHS = NO; CLANG_ENABLE_MODULES = YES; IPHONEOS_DEPLOYMENT_TARGET = 26.0; SDKROOT = iphoneos; SWIFT_VERSION = 5.0; }; name = Debug; };
+		AA0000000000000000000002 = {isa = XCBuildConfiguration; buildSettings = {ALWAYS_SEARCH_USER_PATHS = NO; CLANG_ENABLE_MODULES = YES; IPHONEOS_DEPLOYMENT_TARGET = 26.0; SDKROOT = iphoneos; SWIFT_VERSION = 5.0; }; name = Release; };
+		AA0000000000000000000003 = {isa = XCBuildConfiguration; buildSettings = {CODE_SIGN_STYLE = Automatic; CURRENT_PROJECT_VERSION = 1; GENERATE_INFOPLIST_FILE = NO; INFOPLIST_FILE = Call119AppleEval/Info.plist; IPHONEOS_DEPLOYMENT_TARGET = 26.0; MARKETING_VERSION = 1.0; PRODUCT_BUNDLE_IDENTIFIER = jp.quick119.Call119AppleRetest4Way; PRODUCT_NAME = "$(TARGET_NAME)"; SUPPORTED_PLATFORMS = "iphoneos iphonesimulator"; SWIFT_VERSION = 5.0; TARGETED_DEVICE_FAMILY = 2; }; name = Debug; };
+		AA0000000000000000000004 = {isa = XCBuildConfiguration; buildSettings = {CODE_SIGN_STYLE = Automatic; CURRENT_PROJECT_VERSION = 1; GENERATE_INFOPLIST_FILE = NO; INFOPLIST_FILE = Call119AppleEval/Info.plist; IPHONEOS_DEPLOYMENT_TARGET = 26.0; MARKETING_VERSION = 1.0; PRODUCT_BUNDLE_IDENTIFIER = jp.quick119.Call119AppleRetest4Way; PRODUCT_NAME = "$(TARGET_NAME)"; SUPPORTED_PLATFORMS = "iphoneos iphonesimulator"; SWIFT_VERSION = 5.0; TARGETED_DEVICE_FAMILY = 2; }; name = Release; };
+	};
+	rootObject = A80000000000000000000001;
+}
